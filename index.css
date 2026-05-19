@@ -1,0 +1,800 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* VELO 2.0: Deep Space Neon Theme */
+    --background: 230 50% 1%;
+    --foreground: 210 20% 98%;
+    
+    --card: 230 30% 2%;
+    --card-foreground: 210 20% 98%;
+    
+    --popover: 230 30% 2%;
+    --popover-foreground: 210 20% 98%;
+    
+    --primary: 185 100% 50%; /* Pure Electric Cyan */
+    --primary-foreground: 230 50% 1%;
+    
+    --secondary: 275 100% 60%; /* Vibrant Violet */
+    --secondary-foreground: 210 20% 98%;
+    
+    --muted: 230 25% 6%;
+    --muted-foreground: 215 15% 55%;
+    
+    --accent: 320 100% 55%; /* Plasma Pink */
+    --accent-foreground: 210 20% 98%;
+    
+    --destructive: 0 95% 60%;
+    --destructive-foreground: 210 20% 98%;
+    
+    --border: 230 30% 8%;
+    --input: 230 30% 5%;
+    --ring: 185 100% 50%;
+    
+    --radius: 1rem;
+
+    --font-sans: "Geist", "Inter", sans-serif;
+    --font-mono: "Geist Mono", "JetBrains Mono", monospace;
+  }
+
+  .dark {
+    --background: 230 50% 1%;
+    --foreground: 210 20% 98%;
+  }
+
+  /* Theme System: Dynamic Gradients & Animations */
+  [data-velo-theme="neon_pink_pulse"] {
+    --primary: 320 100% 55%; /* Plasma Pink */
+    --ring: 320 100% 55%;
+    --theme-glow: rgba(255, 0, 229, 0.4);
+    --theme-gradient: linear-gradient(135deg, hsl(320 100% 55%) 0%, hsl(275 100% 60%) 100%);
+  }
+
+  [data-velo-theme="deep_purple_nebula"] {
+    --primary: 275 100% 60%; /* Vibrant Violet */
+    --ring: 275 100% 60%;
+    --theme-glow: rgba(125, 0, 255, 0.4);
+    --theme-gradient: linear-gradient(135deg, hsl(275 100% 60%) 0%, hsl(320 100% 55%) 100%);
+  }
+
+  [data-velo-theme="neon_green_circuit"] {
+    --primary: 150 100% 40%; /* Algorithm Green */
+    --ring: 150 100% 40%;
+    --theme-glow: rgba(16, 185, 129, 0.4);
+    --theme-gradient: linear-gradient(135deg, hsl(150 100% 40%) 0%, hsl(185 100% 50%) 100%);
+  }
+
+  [data-velo-theme="fluorescent_orange_ember"] {
+    --primary: 30 100% 50%; /* Ember Glow */
+    --ring: 30 100% 50%;
+    --theme-glow: rgba(245, 158, 11, 0.4);
+    --theme-gradient: linear-gradient(135deg, hsl(30 100% 50%) 0%, hsl(0 95% 60%) 100%);
+  }
+
+  /* Theme Animation Intensity Modifiers */
+  [data-theme-intensity="low"] {
+    --theme-animation-duration: 8s;
+    --theme-pulse-opacity: 0.1;
+  }
+  [data-theme-intensity="medium"] {
+    --theme-animation-duration: 4s;
+    --theme-pulse-opacity: 0.2;
+  }
+  [data-theme-intensity="high"] {
+    --theme-animation-duration: 2s;
+    --theme-pulse-opacity: 0.4;
+  }
+
+  /* Animated Theme Elements */
+  [data-velo-theme]:not([data-velo-theme="default"]) .cockpit-panel,
+  [data-velo-theme]:not([data-velo-theme="default"]) .holo-card,
+  [data-velo-theme]:not([data-velo-theme="default"]) .identity-chamber {
+    border-color: hsla(var(--primary) / 0.3);
+    box-shadow: 0 0 30px hsla(var(--primary) / 0.1);
+    animation: theme-border-pulse var(--theme-animation-duration, 4s) ease-in-out infinite;
+  }
+
+  [data-velo-theme]:not([data-velo-theme="default"]) .hud-button-primary {
+    background: var(--theme-gradient, hsl(var(--primary)));
+    box-shadow: 0 0 25px hsla(var(--primary) / 0.4);
+    animation: theme-button-pulse var(--theme-animation-duration, 4s) ease-in-out infinite;
+  }
+
+  [data-velo-theme]:not([data-velo-theme="default"]) .data-track-fill {
+    background: var(--theme-gradient, hsl(var(--primary)));
+    box-shadow: 0 0 15px hsla(var(--primary) / 0.5);
+  }
+
+  [data-velo-theme]:not([data-velo-theme="default"]) .hud-nav-item.active {
+    border-color: hsl(var(--primary));
+    background: hsla(var(--primary) / 0.1);
+    box-shadow: inset 10px 0 20px -10px hsla(var(--primary) / 0.2);
+  }
+
+  [data-velo-theme]:not([data-velo-theme="default"]) .hud-nav-item.active .nav-icon {
+    color: hsl(var(--primary));
+    filter: drop-shadow(0 0 8px hsla(var(--primary) / 0.8));
+  }
+
+  [data-velo-theme]:not([data-velo-theme="default"]) .hud-pip-active {
+    background: hsl(var(--primary));
+    box-shadow: 0 0 10px hsla(var(--primary) / 0.8);
+  }
+
+  /* Keyframes for Themes */
+  @keyframes theme-border-pulse {
+    0%, 100% { border-color: hsla(var(--primary) / 0.2); box-shadow: 0 0 20px hsla(var(--primary) / 0.05); }
+    50% { border-color: hsla(var(--primary) / 0.5); box-shadow: 0 0 40px hsla(var(--primary) / 0.15); }
+  }
+
+  @keyframes theme-button-pulse {
+    0%, 100% { transform: scale(1); filter: brightness(1); }
+    50% { transform: scale(1.02); filter: brightness(1.1); box-shadow: 0 0 35px hsla(var(--primary) / 0.6); }
+  }
+
+  @keyframes theme-glow-pulse {
+    0%, 100% { opacity: var(--theme-pulse-opacity, 0.2); transform: scale(1); }
+    50% { opacity: calc(var(--theme-pulse-opacity, 0.2) * 1.5); transform: scale(1.1); }
+  }
+
+  /* Add global animated glow for themed users */
+  [data-velo-theme]:not([data-velo-theme="default"])::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+    height: 80vw;
+    background: radial-gradient(circle, hsla(var(--primary) / 0.05) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: -1;
+    animation: theme-glow-pulse 10s ease-in-out infinite;
+  }
+}
+
+  /* Hud Layout Utilities */
+  .hud-scroll-container {
+    @apply overflow-y-auto overflow-x-hidden h-full;
+    scrollbar-gutter: stable;
+  }
+
+  .hud-container-padded {
+    @apply px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-10;
+  }
+
+  .safe-bottom-padding {
+    @apply pb-24 sm:pb-32;
+  }
+
+  .hud-card-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6;
+  }
+
+  .hud-stack-v {
+    @apply flex flex-col gap-6 sm:gap-8 lg:gap-10;
+  }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 overflow-x-hidden;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(0, 242, 255, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 100% 100%, rgba(125, 0, 255, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 0% 100%, rgba(255, 0, 229, 0.05) 0%, transparent 40%),
+      linear-gradient(to bottom, rgba(5, 5, 10, 0.5), rgba(0, 0, 0, 0.9));
+    background-attachment: fixed;
+  }
+
+  /* Custom Scrollbar for the Space Age */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-black/40;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/40 rounded-full hover:bg-primary/60 transition-all;
+  }
+}
+
+@layer components {
+  /* 4D Layered Panels */
+  .cockpit-panel {
+    @apply bg-card/40 backdrop-blur-3xl border border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.8)] relative overflow-hidden rounded-2xl;
+    transform: perspective(1000px) rotateX(0.5deg);
+  }
+  
+  .cockpit-panel::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none;
+  }
+
+  .cockpit-panel::after {
+    content: '';
+    @apply absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none;
+  }
+
+  .holo-card {
+    @apply bg-card/40 backdrop-blur-2xl border border-primary/10 shadow-[0_0_40px_rgba(0,0,0,0.6)] relative overflow-hidden transition-all duration-500 rounded-2xl;
+  }
+
+  .holo-card:hover {
+    @apply border-primary/30 shadow-[0_0_30px_rgba(0,242,255,0.08)];
+    transform: translateY(-2px) scale(1.005);
+  }
+
+  .mission-objective-card {
+    @apply relative overflow-hidden rounded-2xl border-2 border-primary/20 bg-primary/5 p-6;
+    box-shadow: inset 0 0 40px rgba(0, 242, 255, 0.05), 0 0 20px rgba(0, 242, 255, 0.1);
+  }
+
+  .mission-objective-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-1 h-full bg-primary shadow-[0_0_15px_rgba(0,242,255,0.8)];
+  }
+
+  .status-rail-item {
+    @apply relative flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300 overflow-hidden border border-transparent;
+  }
+
+  .status-rail-item.active {
+    @apply bg-primary/10 text-primary border-primary/20 shadow-[0_0_20px_rgba(0,242,255,0.05)];
+  }
+
+  .status-rail-item.active::before {
+    content: '';
+    @apply absolute left-0 top-1/2 -translate-y-1/2 w-1 h-2/3 bg-primary rounded-r-full shadow-[0_0_10px_rgba(0,242,255,0.8)];
+  }
+
+  .console-switch {
+    @apply relative px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-widest text-zinc-400 transition-all hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center gap-2;
+  }
+
+  .console-switch.active {
+    @apply bg-primary/10 border-primary/40 text-primary shadow-[0_0_15px_rgba(0,242,255,0.2)];
+  }
+
+  .scanning-ring-active {
+    @apply absolute inset-0 rounded-full border-2 border-primary/20 animate-[ping_3s_cubic-bezier(0,0,0.2,1)_infinite];
+  }
+
+  .data-track {
+    @apply h-1 w-full bg-white/5 rounded-full overflow-hidden;
+  }
+
+  .data-track-fill {
+    @apply h-full bg-primary shadow-[0_0_10px_rgba(0,242,255,0.5)];
+  }
+
+  .neon-border-cyan { @apply border-primary/50 shadow-[0_0_15px_rgba(0,242,255,0.2)]; }
+  .neon-border-magenta { @apply border-accent/50 shadow-[0_0_15px_rgba(255,0,229,0.2)]; }
+  .neon-border-violet { @apply border-secondary/50 shadow-[0_0_15px_rgba(125,0,255,0.2)]; }
+  .neon-border-green { @apply border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.2)]; }
+  .neon-border-amber { @apply border-amber-500/50 shadow-[0_0_15px_rgba(245,158,11,0.2)]; }
+  /* High-Tech HUD Utilities */
+  .hud-container {
+    @apply relative overflow-hidden bg-background text-foreground;
+  }
+
+  .hud-border {
+    @apply border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)];
+  }
+
+  .hud-glass {
+    @apply bg-black/40 backdrop-blur-3xl border border-white/5;
+  }
+
+  .hud-rail {
+    @apply flex flex-col border-r border-white/5 bg-black/40 backdrop-blur-3xl relative z-50;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .hud-nav-item {
+    @apply relative flex items-center gap-3 px-6 py-4 transition-all duration-300 overflow-hidden border-l-2 border-transparent hover:bg-white/[0.03];
+  }
+
+  .hud-nav-item.active {
+    @apply bg-primary/10 text-primary border-l-primary shadow-[inset_10px_0_20px_-10px_rgba(0,242,255,0.2)];
+  }
+
+  .hud-nav-item.active .nav-icon {
+    @apply text-primary drop-shadow-[0_0_8px_rgba(0,242,255,0.8)];
+  }
+
+  .hud-nav-item .nav-label {
+    @apply text-[11px] font-black uppercase tracking-widest transition-colors;
+  }
+
+  .hud-nav-item:not(.active) .nav-label {
+    @apply text-zinc-500;
+  }
+
+  .hud-pip {
+    @apply w-1.5 h-1.5 rounded-full transition-all duration-500;
+  }
+
+  .hud-pip-active {
+    @apply bg-primary shadow-[0_0_10px_rgba(0,242,255,0.8)] animate-pulse;
+  }
+
+  .hud-pip-inactive {
+    @apply bg-white/10;
+  }
+
+  .hud-section-header {
+    @apply px-6 py-2 text-[9px] font-black uppercase tracking-[0.3em] text-white/20 flex items-center gap-3;
+  }
+
+  .hud-section-header::after {
+    content: '';
+    @apply h-[1px] flex-1 bg-gradient-to-r from-white/10 to-transparent;
+  }
+
+  .hud-button-base {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2 rounded-xl font-black uppercase tracking-widest transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:pointer-events-none text-[13px] whitespace-nowrap;
+  }
+
+  .hud-button-primary {
+    @apply bg-primary text-black shadow-[0_0_25px_rgba(0,242,255,0.4)] hover:bg-primary/90 hover:shadow-[0_0_35px_rgba(0,242,255,0.6)] border-none;
+  }
+
+  .hud-button-outline {
+    @apply bg-transparent border-2 border-white/20 text-black hover:border-primary/50 hover:text-black hover:bg-primary/5;
+  }
+
+  .hud-button-ghost {
+    @apply bg-transparent text-black hover:text-black hover:bg-white/5;
+  }
+
+  .hud-status-badge {
+    @apply px-2.5 py-1 rounded-md text-[10px] font-black uppercase tracking-widest border border-white/10 bg-black/40 shadow-[0_0_10px_rgba(0,0,0,0.5)];
+  }
+
+  .hud-stat-card {
+    @apply p-4 rounded-2xl bg-white/[0.03] border border-white/5 space-y-1 relative overflow-hidden;
+  }
+
+  .hud-stat-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-1 h-full bg-primary/20;
+  }
+
+  .hud-title-lg {
+    @apply text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tighter uppercase italic leading-[1.1] sm:leading-[0.9];
+  }
+
+  /* De-cramping & Responsive Polish */
+  .cramp-safe-row {
+    @apply flex items-start gap-2 sm:gap-4 flex-wrap sm:flex-nowrap;
+  }
+
+  .cramp-safe-row-center {
+    @apply flex items-center gap-2 sm:gap-4 flex-wrap sm:flex-nowrap;
+  }
+
+  .cramp-safe-text {
+    @apply min-w-0 flex-1 break-words;
+  }
+
+  .hud-grid-responsive {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6;
+  }
+
+  .hud-flex-stack {
+    @apply flex flex-col sm:flex-row items-center gap-4;
+  }
+
+  .cockpit-panel-responsive {
+    @apply cockpit-panel p-4 sm:p-5 md:p-6;
+  }
+
+  .hud-button-responsive {
+    @apply hud-button-base text-[11px] sm:text-[12px] px-4 sm:px-5;
+  }
+
+  .hud-stat-card-responsive {
+    @apply hud-stat-card p-3 sm:p-3.5;
+  }
+
+  .hud-label-xs {
+    @apply text-[11px] font-black uppercase tracking-[0.2em] text-zinc-500;
+  }
+
+  .hud-label-sm {
+    @apply text-xs font-black uppercase tracking-widest text-zinc-400;
+  }
+
+  .hud-card-header {
+    @apply flex items-center justify-between p-4 border-b border-white/5 relative z-10;
+  }
+
+  .hud-card-body {
+    @apply p-6 relative z-10;
+  }
+
+  /* Accessibility & Readability Fixes */
+  .readable-text {
+    @apply text-zinc-200 font-medium leading-relaxed;
+  }
+
+  .strong-text {
+    @apply text-white font-bold;
+  }
+
+  /* Scanline subtle pulse */
+  @keyframes scanline-pulse {
+    0%, 100% { opacity: 0.02; }
+    50% { opacity: 0.05; }
+  }
+  .scanline-overlay {
+    animation: scanline-pulse 4s ease-in-out infinite;
+  }
+
+  /* Motion */
+  .hud-reveal {
+    @apply opacity-0 translate-y-4 animate-hud-reveal;
+  }
+
+  /* Grid Fix */
+  .depth-grid {
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+  }
+
+  /* Autopilot Cockpit Effects */
+  .orb-glow {
+    @apply absolute inset-0 rounded-full bg-primary/20 blur-2xl animate-pulse;
+  }
+
+  .scanning-ring {
+    @apply absolute inset-0 rounded-full border border-primary/30 animate-ping;
+  }
+
+  .hologram-flicker {
+    animation: flicker 2s infinite;
+  }
+
+  @keyframes flicker {
+    0% { opacity: 0.8; }
+    5% { opacity: 0.5; }
+    10% { opacity: 0.9; }
+    15% { opacity: 0.7; }
+    20% { opacity: 0.9; }
+    25% { opacity: 0.8; }
+    30% { opacity: 1; }
+    100% { opacity: 0.9; }
+  }
+
+  .radar-sweep {
+    @apply absolute inset-0 rounded-full;
+    background: conic-gradient(from 0deg, transparent 0deg, rgba(0, 242, 255, 0.1) 180deg, transparent 360deg);
+    animation: sweep 4s linear infinite;
+  }
+
+  @keyframes sweep {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Star Drift Background */
+  .star-field {
+    @apply absolute inset-0 overflow-hidden pointer-events-none;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  }
+
+  .star {
+    @apply absolute rounded-full bg-white opacity-0;
+    animation: star-drift linear infinite;
+  }
+
+  @keyframes star-drift {
+    0% { transform: translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+  }
+
+  /* 3D Card Depth */
+  .card-3d {
+    @apply transition-all duration-500 transform-gpu;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+  }
+
+  .card-3d:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) translateZ(10px);
+    @apply shadow-[10px_10px_30px_rgba(0,242,255,0.1)];
+  }
+
+  /* 3D Icon Effects */
+  .icon-3d {
+    @apply relative transition-all duration-300;
+    filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.3));
+  }
+
+  .icon-3d:hover {
+    @apply scale-110 -translate-y-0.5;
+    filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.6));
+  }
+
+  /* Profile Sync Pulse */
+  .profile-sync-pulse {
+    @apply relative overflow-hidden;
+  }
+
+  .profile-sync-pulse::after {
+    content: '';
+    @apply absolute inset-0 bg-primary/10 opacity-0;
+    animation: sync-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes sync-pulse {
+    0%, 100% { opacity: 0; transform: scale(1); }
+    50% { opacity: 0.3; transform: scale(1.05); }
+  }
+
+  /* Holographic Orbit */
+  .holo-orbit {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full border border-primary/5 rounded-full;
+    animation: orbit 20s linear infinite;
+  }
+
+  /* Mission Bay & Cockpit Additions */
+  .viewport-glass {
+    @apply bg-black/40 backdrop-blur-3xl border border-white/10 relative overflow-hidden;
+    box-shadow: inset 0 0 50px rgba(0, 242, 255, 0.05);
+  }
+
+  .mission-bay-hero {
+    @apply relative p-10 rounded-[2.5rem] bg-gradient-to-br from-card/60 to-black/80 border border-white/5 overflow-hidden shadow-2xl;
+    transform: perspective(2000px) rotateX(1deg);
+  }
+
+  .mission-bay-hero::before {
+    content: '';
+    @apply absolute -top-[50%] -left-[50%] w-[200%] h-[200%] opacity-[0.03] pointer-events-none;
+    background: radial-gradient(circle at center, var(--primary) 0%, transparent 70%);
+    animation: rotate 30s linear infinite;
+  }
+
+  .launch-tile {
+    @apply cockpit-panel p-6 space-y-4 hover:border-primary/40 transition-all cursor-pointer card-3d;
+  }
+
+  .launch-tile-active {
+    @apply border-primary/50 bg-primary/5 shadow-[0_0_30px_rgba(0,242,255,0.1)];
+  }
+
+  .command-dock {
+    @apply p-4 rounded-2xl bg-black/60 border border-white/10 flex items-center gap-4 backdrop-blur-2xl shadow-2xl;
+  }
+
+  .approval-console {
+    @apply cockpit-panel p-8 border-primary/30 bg-gradient-to-br from-primary/10 to-transparent relative overflow-hidden;
+  }
+
+  .lane-hologram {
+    @apply relative p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-all overflow-hidden;
+  }
+
+  .lane-hologram::after {
+    content: '';
+    @apply absolute top-0 right-0 w-16 h-16 bg-primary/5 blur-3xl pointer-events-none;
+  }
+
+  .hud-action-button {
+    @apply hud-button-base bg-primary text-black shadow-[0_0_20px_rgba(0,242,255,0.3)] hover:shadow-[0_0_40px_rgba(0,242,255,0.5)] active:scale-95;
+  }
+
+  /* Wave 2 Specific Bay Styles */
+  .identity-chamber {
+    @apply cockpit-panel border-primary/20 bg-gradient-to-b from-primary/5 to-transparent;
+  }
+
+  .vault-containment {
+    @apply cockpit-panel border-secondary/30 bg-gradient-to-br from-secondary/10 to-black/90 shadow-[0_0_50px_rgba(125,0,255,0.1)];
+  }
+
+  .docking-bay-card {
+    @apply holo-card hover:border-primary/40 hover:bg-primary/5 cursor-pointer transition-all duration-500;
+  }
+
+  .market-observatory {
+    @apply relative p-8 rounded-[2rem] bg-black/60 border border-white/5 overflow-hidden shadow-2xl;
+  }
+
+  .commerce-forge-tile {
+    @apply cockpit-panel p-6 border-white/10 hover:border-accent/40 transition-all cursor-pointer;
+  }
+
+  /* Wave 3: Admin & Monitoring Bays */
+  .black-box-log-card {
+    @apply relative p-4 border-l-2 border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-all;
+  }
+
+  .monitor-radar-panel {
+    @apply cockpit-panel border-primary/20 bg-gradient-to-br from-primary/5 to-transparent;
+  }
+
+  .command-bridge-panel {
+    @apply relative overflow-hidden rounded-3xl border border-white/5 bg-black/40 backdrop-blur-3xl;
+  }
+
+  .system-health-observatory {
+    @apply cockpit-panel border-red-500/10 bg-gradient-to-b from-red-500/5 to-transparent;
+  }
+
+  .admin-control-matrix {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6 p-6;
+  }
+
+  .dev-console-panel {
+    @apply font-mono text-[11px] bg-black/60 border border-primary/20 rounded-xl p-4 relative overflow-hidden shadow-[inset_0_0_20px_rgba(0,242,255,0.05)];
+  }
+
+  .dev-console-panel::before {
+    content: '';
+    @apply absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] pointer-events-none z-10 opacity-20;
+  }
+
+  .scanner-ring-container {
+    @apply relative w-48 h-48 flex items-center justify-center;
+  }
+
+  .scanner-ring-outer {
+    @apply absolute inset-0 border-2 border-primary/10 rounded-full animate-[spin_10s_linear_infinite];
+  }
+
+  .scanner-ring-inner {
+    @apply absolute inset-4 border border-primary/20 rounded-full animate-[spin_6s_linear_infinite_reverse];
+  }
+
+  /* Wave 4: Remaining Beta-Facing Bays */
+  .freelance-mission-card {
+    @apply cockpit-panel border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-transparent hover:border-cyan-500/40 transition-all cursor-pointer;
+  }
+
+  .comms-transmission-card {
+    @apply cockpit-panel border-primary/20 bg-black/40 hover:bg-black/60 transition-all;
+  }
+
+  .scanner-observatory-panel {
+    @apply relative p-10 rounded-[3rem] bg-black/60 border border-white/5 overflow-hidden shadow-2xl;
+  }
+
+  .connection-tier-card {
+    @apply holo-card p-6 border-white/5 bg-white/[0.01] hover:bg-white/[0.02] transition-all;
+  }
+
+  .launch-sequence-panel {
+    @apply cockpit-panel border-white/10 bg-black/40 p-12 shadow-2xl relative overflow-hidden;
+  }
+
+  .readiness-chamber {
+    @apply cockpit-panel border-amber-500/20 bg-gradient-to-b from-amber-500/5 to-transparent p-8;
+  }
+
+  .glass-button {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-2 rounded-xl font-black uppercase tracking-widest transition-all duration-300 active:scale-95 border-2 border-white/10 text-black hover:border-primary/50 hover:text-black hover:bg-primary/5 text-[11px];
+  }
+
+  .hud-tag {
+    @apply px-2 py-0.5 rounded bg-white/5 border border-white/10 text-[9px] font-black uppercase tracking-widest text-zinc-500;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+
+  .freelance-station-bay {
+    @apply cockpit-panel border-emerald-500/20 bg-gradient-to-br from-emerald-500/5 to-black/90;
+  }
+
+  .comms-transmission-panel {
+    @apply cockpit-panel border-cyan-500/20 bg-gradient-to-b from-cyan-500/5 to-black/80;
+  }
+
+  .galaxy-scanner-map {
+    @apply cockpit-panel border-blue-500/20 bg-[radial-gradient(circle_at_50%_50%,rgba(37,99,235,0.05)_0%,transparent_70%)];
+  }
+
+  .connection-hub-console {
+    @apply cockpit-panel border-primary/20 bg-gradient-to-tr from-primary/5 to-black/90;
+  }
+
+  .launch-sequence-card {
+    @apply cockpit-panel border-white/10 bg-black/60 shadow-[0_0_80px_rgba(0,0,0,0.9)];
+  }
+
+  .bridge-runner-panel {
+    @apply cockpit-panel border-cyan-400/20 bg-gradient-to-br from-cyan-400/5 to-black/90;
+  }
+
+  .dormant-readiness-panel {
+    @apply cockpit-panel border-sky-400/20 bg-gradient-to-b from-sky-400/5 to-black/90 grayscale-[0.5];
+  }
+
+  .light-sweep-effect {
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full pointer-events-none;
+  }
+
+  @keyframes light-sweep {
+    to { transform: translateX(100%); }
+  }
+
+  .animate-light-sweep {
+    animation: light-sweep 2s infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .animate-spin-slow {
+    animation: rotate 12s linear infinite;
+  }
+
+  .glass-button {
+    @apply relative px-6 py-3 rounded-2xl bg-white/5 border border-white/10 text-black font-bold transition-all hover:bg-white/10 hover:border-white/20 active:scale-95 flex items-center justify-center gap-2 overflow-hidden disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  .glass-button::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full;
+  }
+
+  .glass-button:hover::after {
+    animation: light-sweep 2s infinite;
+  }
+}
+
+@layer components {
+  /* Marketing Module Additions */
+  .scanline {
+    @apply w-full h-[100px] z-[9999] fixed bottom-full pointer-events-none opacity-10;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 242, 255, 0.05) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    animation: scanline 10s linear infinite;
+  }
+
+  @keyframes scanline {
+    0% { bottom: 100%; }
+    100% { bottom: -100px; }
+  }
+
+  .redacted {
+    @apply bg-zinc-950 text-transparent select-none px-1 rounded-sm cursor-help break-words;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+  }
+
+  .redacted:hover {
+    @apply text-primary/10 transition-colors duration-500;
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.8);
+  }
+}
