@@ -1,0 +1,17 @@
+{
+  "name": "PodProduct",
+  "description": "Product listings for Print-on-Demand items",
+  "properties": {
+    "design_id": { "type": "string", "description": "ID of the design used for this product" },
+    "owner_user_id": { "type": "string", "description": "The user ID who owns this product" },
+    "owner_email": { "type": "string", "description": "The email of the user who owns this product" },
+    "product_type": { "type": "string", "description": "The type of product (e.g., t-shirt, mug)" },
+    "title": { "type": "string", "description": "The title of the product listing" },
+    "mockup_image_url": { "type": "string", "description": "URL of the product mockup image" },
+    "price": { "type": "number", "description": "The suggested price for this product" },
+    "gelato_product_id": { "type": "string", "description": "The Gelato product identifier (if pushed)" },
+    "status": { "type": "string", "description": "draft, pushed, sold" },
+    "niche": { "type": "string", "description": "The niche for this product" },
+    "metadata": { "type": "object", "description": "Additional provider-specific data" }
+  }
+}

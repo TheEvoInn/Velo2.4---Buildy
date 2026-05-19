@@ -1,0 +1,13 @@
+{
+  "name": "VeloAdminSetting",
+  "description": "Persistent admin configuration for platform systems and departments",
+  "properties": {
+    "category": { "type": "string", "description": "Setting category (department, scanner, workflow, autopilot, theme, notifications)" },
+    "key": { "type": "string", "description": "Unique setting key" },
+    "value": { "type": "string", "description": "Current setting value" },
+    "status": { "type": "string", "description": "Setting status (active, disabled, experimental)" },
+    "updated_by_email": { "type": "string", "description": "Email of the admin who last changed it" },
+    "updated_at_label": { "type": "string", "description": "Human-readable update timestamp" },
+    "metadata": { "type": "object", "description": "Additional setting context" }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "VeloDevopsCommand",
+  "description": "Staged developer console commands for system modification and maintenance",
+  "properties": {
+    "command_text": { "type": "string", "description": "The original natural language command" },
+    "command_type": { "type": "string", "description": "Classified type (e.g., EDIT_FILE, CREATE_MODULE, DEPLOY, ROLLBACK)" },
+    "requested_by_email": { "type": "string", "description": "Email of the admin who issued the command" },
+    "requested_by_user_id": { "type": "string", "description": "User ID of the admin" },
+    "target_area": { "type": "string", "description": "Targeted project area or department" },
+    "target_path": { "type": "string", "description": "Targeted file or resource path" },
+    "risk_level": { "type": "string", "description": "Estimated risk (LOW, MEDIUM, HIGH, CRITICAL)" },
+    "execution_mode": { "type": "string", "description": "Current mode (buildy_staged, ubuntu_dormant, ubuntu_active)" },
+    "status": { "type": "string", "description": "Command status (draft, staged, validated, approved, blocked, archived)" },
+    "staged_patch_summary": { "type": "string", "description": "Summary of proposed code or configuration changes" },
+    "generated_plan": { "type": "string", "description": "AI-generated step-by-step execution plan" },
+    "validation_summary": { "type": "string", "description": "Results of simulated tests or validation checks" },
+    "linked_deployment_request_id": { "type": "string", "description": "Reference to a deployment request record" },
+    "linked_mission_id": { "type": "string", "description": "Reference to an autopilot mission" },
+    "ubuntu_activation_notes": { "type": "string", "description": "Instructions for executing this on Ubuntu after migration" },
+    "metadata": { "type": "object", "description": "Additional technical metadata" }
+  }
+}

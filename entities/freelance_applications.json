@@ -1,0 +1,32 @@
+{
+  "name": "FreelanceApplication",
+  "description": "A record of an application submitted or prepared for a freelance opportunity.",
+  "properties": {
+    "opportunity_id": { "type": "string", "description": "Reference to the FreelanceOpportunity" },
+    "platform": { "type": "string", "description": "The platform where the application is submitted (e.g., Upwork, Freelancer)" },
+    "client_name": { "type": "string", "description": "The name of the client or hiring company" },
+    "job_title": { "type": "string", "description": "The title of the job applied for" },
+    "status": { "type": "string", "description": "Current status of the application (draft, packaged, approval_requested, approved, submitted_manually, submitted_by_connector, won, rejected, archived)" },
+    "proposal_title": { "type": "string", "description": "Subject or title of the proposal" },
+    "proposal_body": { "type": "string", "description": "The full text of the proposal or cover letter" },
+    "tone": { "type": "string", "description": "The tone used in the proposal (e.g., professional, enthusiastic, concise)" },
+    "skill_emphasis": { "type": "array", "description": "Skills highlighted in this specific application", "items": { "type": "string" } },
+    "bid_amount": { "type": "number", "description": "The amount bid for the project" },
+    "currency": { "type": "string", "description": "Currency of the bid (e.g., USD, EUR)" },
+    "payout_text": { "type": "string", "description": "Original payout text from opportunity" },
+    "steps": { "type": "string", "description": "Workflow steps from opportunity" },
+    "estimated_timeline": { "type": "string", "description": "Estimated time to complete the work" },
+    "cover_questions": { "type": "array", "description": "Answers to specific platform cover questions", "items": { "type": "object", "properties": { "question": { "type": "string" }, "answer": { "type": "string" } } } },
+    "required_documents": { "type": "array", "description": "List of documents required by the platform", "items": { "type": "string" } },
+    "linked_mission_id": { "type": "string", "description": "ID of the AutopilotMission for approval" },
+    "linked_comms_template_id": { "type": "string", "description": "ID of the CommsTemplate used for follow-ups" },
+    "linked_comms_message_id": { "type": "string", "description": "ID of the CommsMessage record" },
+    "submission_mode": { "type": "string", "description": "How the application is to be submitted (manual_review, connector_ready, not_configured)" },
+    "submitted_at": { "type": "string", "description": "Timestamp when the application was submitted" },
+    "follow_up_due_at": { "type": "string", "description": "Timestamp when a follow-up is scheduled" },
+    "follow_up_status": { "type": "string", "description": "Status of the follow-up process (none, queued, sent, acknowledged)" },
+    "risk_level": { "type": "string", "description": "Risk level associated with this application" },
+    "approval_notes": { "type": "string", "description": "Notes from the user or autopilot during approval" },
+    "metadata": { "type": "object", "description": "Additional platform-specific metadata" }
+  }
+}

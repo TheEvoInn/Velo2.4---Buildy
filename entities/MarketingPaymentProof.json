@@ -1,0 +1,20 @@
+{
+  "name": "MarketingPaymentProof",
+  "description": "Manual payment proof submission for marketing access",
+  "properties": {
+    "name": { "type": "string", "description": "Full name of the submitter" },
+    "email": { "type": "string", "description": "Email address" },
+    "tier": { "type": "string", "description": "Requested tier (explorer, commander, founder)" },
+    "amount": { "type": "number", "description": "Payment amount" },
+    "payment_method": { "type": "string", "description": "Method used: paypal | stripe | manual" },
+    "payment_reference": { "type": "string", "description": "Transaction ID or reference number" },
+    "proof_notes": { "type": "string", "description": "Optional notes from the buyer" },
+    "status": { "type": "string", "description": "pending | approved | rejected" },
+    "submitted_at": { "type": "string", "description": "Submission ISO date" },
+    "reviewed_at": { "type": "string", "description": "Review ISO date" },
+    "reviewed_by_email": { "type": "string", "description": "Email of the admin who reviewed" },
+    "review_notes": { "type": "string", "description": "Admin notes on review" },
+    "linked_member_id": { "type": "string", "description": "ID of the created/updated MarketingMember" },
+    "archive_item_id": { "type": "string", "description": "ID of the safe audit record" }
+  }
+}

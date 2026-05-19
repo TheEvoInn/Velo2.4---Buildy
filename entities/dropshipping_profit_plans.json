@@ -1,0 +1,21 @@
+{
+  "name": "DropshippingProfitPlan",
+  "description": "Tracking and learning from product profitability",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "The user ID who owns this plan" },
+    "owner_email": { "type": "string", "description": "The email of the user who owns this plan" },
+    "candidate_id": { "type": "string", "description": "The ID of the related product candidate" },
+    "page_draft_id": { "type": "string", "description": "The ID of the related sales page" },
+    "revenue_estimate": { "type": "number", "description": "Estimated revenue" },
+    "cost_estimate": { "type": "number", "description": "Estimated costs" },
+    "profit_estimate": { "type": "number", "description": "Estimated net profit" },
+    "conversion_rate_observed": { "type": "number", "description": "Observed conversion rate percentage" },
+    "traffic_notes": { "type": "string", "description": "Notes on traffic sources and quality" },
+    "winning_signals": { "type": "string", "description": "What worked well" },
+    "losing_signals": { "type": "string", "description": "What didn't work well" },
+    "next_test_recommendation": { "type": "string", "description": "AI recommendation for the next test" },
+    "status": { "type": "string", "description": "monitoring, completed, or archived" },
+    "confidence": { "type": "number", "description": "AI confidence score in these findings" },
+    "metadata": { "type": "object", "description": "Additional structured metadata" }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "name": "UbuntuDryRunEvidencePacket",
+  "description": "Recorded proof and review decisions for Ubuntu dry-run categories.",
+  "properties": {
+    "dry_run_category": {
+      "type": "string",
+      "description": "The category of the dry-run (e.g. export_restore, provider_adapter, browser_handoff, local_audit_logging, emergency_halt, rollback_reversal, parallel_validation, host_attestation)."
+    },
+    "title": {
+      "type": "string",
+      "description": "Short descriptive title for this evidence packet."
+    },
+    "status": {
+      "type": "string",
+      "description": "Current status: pending_review, passed, failed, needs_more_evidence, blocked, superseded."
+    },
+    "reviewed_by_email": {
+      "type": "string",
+      "description": "Email of the admin who reviewed this packet."
+    },
+    "reviewed_at_label": {
+      "type": "string",
+      "description": "Timestamp label of the last review."
+    },
+    "evidence_summary": {
+      "type": "string",
+      "description": "Summary of the proof provided (e.g. 'Verified local log file checksums')."
+    },
+    "proof_location_label": {
+      "type": "string",
+      "description": "Reference to where the proof is stored (e.g. 'Local runner /logs/halt-test-01.log')."
+    },
+    "risk_level": {
+      "type": "string",
+      "description": "Risk level associated with this category: LOW, MEDIUM, HIGH, CRITICAL."
+    },
+    "blocker_summary": {
+      "type": "string",
+      "description": "Summary of what is blocking this category if failed or blocked."
+    },
+    "decision_notes": {
+      "type": "string",
+      "description": "Detailed notes on the review decision."
+    },
+    "no_secret_confirmation": {
+      "type": "boolean",
+      "description": "Confirmation that no secrets or exported data are included in this record."
+    },
+    "host_attestation_related": {
+      "type": "boolean",
+      "description": "Whether this evidence is specifically related to host hardware attestation."
+    },
+    "activation_gate_impact": {
+      "type": "string",
+      "description": "Impact on activation: blocks_activation, supports_activation, informational."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata for the evidence packet."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "FreelanceDeliverable",
+  "description": "A file, draft, or piece of content produced for a Freelance Job",
+  "properties": {
+    "job_id": { "type": "string", "description": "Reference to the parent FreelanceJob" },
+    "task_id": { "type": "string", "description": "Reference to the parent FreelanceTask" },
+    "title": { "type": "string", "description": "Name of the deliverable" },
+    "deliverable_type": { "type": "string", "description": "document | code | image | archive | report | message_draft" },
+    "content_preview": { "type": "string", "description": "Safe text preview or snippet of the work" },
+    "file_url": { "type": "string", "description": "Link to the uploaded asset if applicable" },
+    "external_reference": { "type": "string", "description": "Link to external platform draft or cloud doc" },
+    "status": { "type": "string", "description": "draft | staged | review_requested | approved | delivery_staged | delivered_manually | revision_requested | archived" },
+    "version": { "type": "number", "description": "Iteration count" },
+    "client_feedback": { "type": "string", "description": "Logged feedback from the client" },
+    "approval_mission_id": { "type": "string", "description": "Reference to the Action Engine review mission" },
+    "delivery_message_id": { "type": "string", "description": "Reference to the staged delivery message" },
+    "metadata": { "type": "object", "description": "Additional deliverable data" }
+  }
+}

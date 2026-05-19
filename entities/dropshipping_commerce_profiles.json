@@ -1,0 +1,24 @@
+{
+  "name": "DropshippingCommerceProfile",
+  "description": "User preferences and settings for the AI Dropshipping Engine",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "The user ID who owns this profile" },
+    "owner_email": { "type": "string", "description": "The email of the user who owns this profile" },
+    "niches": { "type": "array", "items": { "type": "string" }, "description": "Preferred market niches" },
+    "budget_min": { "type": "number", "description": "Minimum budget for product testing" },
+    "budget_max": { "type": "number", "description": "Maximum budget for product testing" },
+    "risk_tolerance": { "type": "string", "description": "Low, Medium, or High risk tolerance" },
+    "shipping_regions": { "type": "array", "items": { "type": "string" }, "description": "Target shipping regions" },
+    "brand_tone": { "type": "string", "description": "The brand voice and tone" },
+    "product_types": { "type": "array", "items": { "type": "string" }, "description": "Physical, Digital, or both" },
+    "paid_tools_allowed": { "type": "boolean", "description": "Whether the system can suggest paid tools" },
+    "supplier_automation_allowed": { "type": "boolean", "description": "Whether automated supplier ordering is allowed" },
+    "paid_ads_allowed": { "type": "boolean", "description": "Whether paid advertising is allowed" },
+    "fulfillment_automation_allowed": { "type": "boolean", "description": "Whether automated fulfillment is allowed" },
+    "preferred_free_channels": { "type": "array", "items": { "type": "string" }, "description": "Free marketing channels to prioritize" },
+    "notes": { "type": "string", "description": "Additional user notes" },
+    "status": { "type": "string", "description": "active, paused, or setup" },
+    "created_at_label": { "type": "string", "description": "Human readable creation date" },
+    "metadata": { "type": "object", "description": "Additional structured metadata" }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "VeloPlatformBalance",
+  "description": "Aggregated balance snapshots for individual platforms and departments.",
+  "properties": {
+    "owner_email": { "type": "string", "description": "Email of the wallet owner" },
+    "owner_user_id": { "type": "string", "description": "User ID of the wallet owner" },
+    "platform": { "type": "string", "description": "Platform name" },
+    "department": { "type": "string", "description": "Freelance | Commerce | Trading | Crypto" },
+    "currency": { "type": "string", "description": "Primary currency" },
+    "total_balance": { "type": "number", "description": "Current total available balance" },
+    "pending_earnings": { "type": "number", "description": "Earnings not yet cleared" },
+    "cleared_earnings": { "type": "number", "description": "Funds ready for payout" },
+    "lifetime_earnings": { "type": "number", "description": "Total historical earnings from this platform" },
+    "transaction_count": { "type": "number", "description": "Total number of transactions for this platform" },
+    "last_sync_at": { "type": "string", "description": "Timestamp of last sync" },
+    "sync_mode": { "type": "string", "description": "local_ledger | connector_ready | manual | external_connector" },
+    "sync_status": { "type": "string", "description": "synced | needs_connector | failed | stale" },
+    "upcoming_payout_amount": { "type": "number", "description": "Sum of upcoming payouts" },
+    "metadata": { "type": "object", "description": "Additional context" }
+  }
+}

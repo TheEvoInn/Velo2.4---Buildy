@@ -1,0 +1,14 @@
+{
+  "name": "DecisionRule",
+  "description": "User-defined rules for autonomous decision making and safety boundaries",
+  "properties": {
+    "name": { "type": "string", "description": "Rule name" },
+    "department": { "type": "string", "description": "Department this rule applies to" },
+    "trigger": { "type": "string", "description": "Condition that triggers the rule (e.g., VOLATILITY_GT_10)" },
+    "logic": { "type": "string", "description": "Logic or criteria" },
+    "action": { "type": "string", "description": "Action to take (e.g., BLOCK, STAGE, NOTIFY)" },
+    "risk_level": { "type": "string", "description": "low | medium | high" },
+    "is_active": { "type": "boolean", "description": "Whether the rule is enabled" },
+    "metadata": { "type": "object", "description": "Extra configuration" }
+  }
+}

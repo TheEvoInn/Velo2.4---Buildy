@@ -1,0 +1,33 @@
+
+{
+  "name": "VeloPlatformProfile",
+  "description": "A discovered or connected income platform and its readiness state",
+  "properties": {
+    "name": { "type": "string", "description": "Name of the platform" },
+    "category": { "type": "string", "description": "freelance, gig, creator, affiliate, trade, e-commerce, crypto, investing, emerging" },
+    "target_department": { "type": "string", "description": "freelance, crypto, trade, market" },
+    "platform_type": { "type": "string", "description": "e.g. Marketplace, Exchange, Tool, Network" },
+    "source_url": { "type": "string", "description": "Official platform URL" },
+    "cost_mode": { "type": "string", "description": "free, free_opensource, paid_optional, proprietary, manual" },
+    "access_mode": { "type": "string", "description": "automatic, connector-ready, manual, oauth" },
+    "discovery_status": { "type": "string", "description": "new, analyzed, archived" },
+    "connection_status": { "type": "string", "description": "not_connected, connected, staged, disconnected" },
+    "onboarding_status": { "type": "string", "description": "none, pending_approval, in_progress, complete" },
+    "health_status": { "type": "string", "description": "online, degraded, offline, check_required" },
+    "confidence_score": { "type": "number", "description": "Discovery confidence 0-1" },
+    "risk_level": { "type": "string", "description": "low, medium, high" },
+    "sync_progress": { "type": "number", "description": "0-100 percentage of requirements met" },
+    "clone_sync_status": { "type": "string", "description": "incomplete, complete" },
+    "secure_sync_status": { "type": "string", "description": "incomplete, complete" },
+    "core_sync_requests": { "type": "array", "description": "Detailed missing requirements", "items": { "type": "object" } },
+    "requirements": { "type": "array", "description": "Required labels for Clone Bay or Secure Core", "items": { "type": "string" } },
+    "missing_information": { "type": "array", "description": "Missing required fields", "items": { "type": "string" } },
+    "recommended_workflows": { "type": "array", "description": "Workflow template IDs", "items": { "type": "string" } },
+    "permission_toggles": { "type": "object", "description": "Map of action names to boolean status" },
+    "connector_profile_id": { "type": "string", "description": "Reference to VeloConnectorProfile" },
+    "linked_mission_id": { "type": "string", "description": "Current onboarding mission ID" },
+    "last_scanned_at": { "type": "string", "description": "Last discovery/check timestamp" },
+    "notes": { "type": "string", "description": "System or user notes" },
+    "metadata": { "type": "object", "description": "Platform-specific parameters" }
+  }
+}

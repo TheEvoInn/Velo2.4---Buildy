@@ -1,0 +1,28 @@
+{
+  "name": "VeloWalletTransaction",
+  "description": "Canonical ledger entry for all income, sales, and financial adjustments in VELO.",
+  "properties": {
+    "owner_email": { "type": "string", "description": "Email of the wallet owner" },
+    "owner_user_id": { "type": "string", "description": "User ID of the wallet owner" },
+    "transaction_type": { "type": "string", "description": "earning | sale | payout_adjustment | refund | chargeback | manual_income | correction" },
+    "amount": { "type": "number", "description": "Transaction amount" },
+    "currency": { "type": "string", "description": "Currency code (e.g., USD)" },
+    "status": { "type": "string", "description": "pending | cleared | failed | refunded | charged_back | reversed" },
+    "source_department": { "type": "string", "description": "Freelance Station | Commerce Hub | Autopilot | Manual" },
+    "source_platform": { "type": "string", "description": "Platform name (e.g., Upwork, Shopify, Stripe)" },
+    "category": { "type": "string", "description": "freelance | ecommerce | digital_product | manual | autopilot | refund" },
+    "opportunity_id": { "type": "string", "description": "Optional reference to a source opportunity" },
+    "task_id": { "type": "string", "description": "Optional reference to a task" },
+    "mission_id": { "type": "string", "description": "Optional reference to an Autopilot mission" },
+    "source_record_id": { "type": "string", "description": "ID of the original source record for sync/idempotency" },
+    "source_record_type": { "type": "string", "description": "Entity name of the original source record" },
+    "source_url": { "type": "string", "description": "Safe URL to the source platform or task" },
+    "autopilot_involved": { "type": "boolean", "description": "Whether Autopilot assisted in this earning" },
+    "generated_by_autopilot": { "type": "boolean", "description": "Whether this was fully automated by Autopilot" },
+    "occurred_at": { "type": "string", "description": "Timestamp of the transaction occurrence" },
+    "cleared_at": { "type": "string", "description": "Timestamp when funds were cleared/confirmed" },
+    "description": { "type": "string", "description": "User-facing description" },
+    "notes": { "type": "string", "description": "Internal notes" },
+    "metadata": { "type": "object", "description": "Additional context" }
+  }
+}

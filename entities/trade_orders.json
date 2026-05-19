@@ -1,0 +1,17 @@
+{
+  "name": "TradeOrder",
+  "description": "Order records for the e-commerce department",
+  "properties": {
+    "listing_id": { "type": "string" },
+    "customer_label": { "type": "string" },
+    "order_status": { "type": "string" },
+    "fulfillment_status": { "type": "string" },
+    "delivery_notes": { "type": "string" },
+    "issue_status": { "type": "string" },
+    "revenue": { "type": "number" },
+    "costs": { "type": "number" },
+    "net_estimate": { "type": "number" },
+    "comms_reference": { "type": "string" },
+    "metadata": { "type": "object" }
+  }
+}

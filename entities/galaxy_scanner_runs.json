@@ -1,0 +1,19 @@
+{
+  "name": "GalaxyScannerRun",
+  "description": "Log of a Galaxy Scanner execution",
+  "properties": {
+    "department": { "type": "string", "description": "Department scanned" },
+    "scanner_name": { "type": "string", "description": "Name of the scanner routine" },
+    "selected_sources": { "type": "array", "items": { "type": "string" }, "description": "Source IDs used" },
+    "query": { "type": "string", "description": "The search query or parameters" },
+    "filters": { "type": "object", "description": "Applied filters" },
+    "status": { "type": "string", "description": "pending, running, completed, failed" },
+    "results_count": { "type": "number", "description": "Number of opportunities found" },
+    "fallback_used": { "type": "boolean", "description": "Whether fallback logic was triggered" },
+    "summary": { "type": "string", "description": "Human-readable summary of results" },
+    "started_at": { "type": "string", "description": "ISO start time" },
+    "completed_at": { "type": "string", "description": "ISO completion time" },
+    "failure_reason": { "type": "string", "description": "Reason for failure" },
+    "metadata": { "type": "object", "description": "Run-specific telemetry" }
+  }
+}

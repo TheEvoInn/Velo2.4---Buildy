@@ -1,0 +1,28 @@
+{
+  "name": "DropshippingProductCandidate",
+  "description": "A potential product identified by the AI research engine",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "The user ID who owns this candidate" },
+    "owner_email": { "type": "string", "description": "The email of the user who owns this candidate" },
+    "candidate_type": { "type": "string", "description": "physical or digital" },
+    "source_mode": { "type": "string", "description": "How the product was discovered" },
+    "supplier_label": { "type": "string", "description": "The name of the potential supplier" },
+    "title": { "type": "string", "description": "The product title" },
+    "niche": { "type": "string", "description": "The niche this product belongs to" },
+    "summary": { "type": "string", "description": "A brief summary of the product" },
+    "demand_signals": { "type": "string", "description": "Evidence of market demand" },
+    "competition_notes": { "type": "string", "description": "Notes on market competition" },
+    "margin_notes": { "type": "string", "description": "Notes on potential profit margins" },
+    "estimated_cost": { "type": "number", "description": "Estimated cost per unit" },
+    "suggested_price": { "type": "number", "description": "Suggested selling price" },
+    "shipping_regions": { "type": "array", "items": { "type": "string" }, "description": "Available shipping regions" },
+    "digital_delivery_notes": { "type": "string", "description": "How the digital product is delivered" },
+    "score": { "type": "number", "description": "Overall score from 1-100" },
+    "risk_level": { "type": "string", "description": "Low, Medium, or High risk" },
+    "status": { "type": "string", "description": "draft, analyzed, rejected, or selected" },
+    "selected_for_offer": { "type": "boolean", "description": "Whether this was selected for offer creation" },
+    "connector_requirement_summary": { "type": "string", "description": "Connectors needed for this product" },
+    "audit_summary": { "type": "string", "description": "Audit trail summary" },
+    "metadata": { "type": "object", "description": "Additional structured metadata" }
+  }
+}

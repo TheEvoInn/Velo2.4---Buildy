@@ -1,0 +1,24 @@
+{
+  "name": "FreelanceJob",
+  "description": "An active freelance contract or won job being managed in Task Bay",
+  "properties": {
+    "application_id": { "type": "string", "description": "Reference to the winning application" },
+    "opportunity_id": { "type": "string", "description": "Reference to the original opportunity" },
+    "platform": { "type": "string", "description": "Platform where the job is hosted" },
+    "client_name": { "type": "string", "description": "Name of the client" },
+    "job_title": { "type": "string", "description": "Title of the job" },
+    "brief": { "type": "string", "description": "Full job brief or description" },
+    "scope_summary": { "type": "string", "description": "AI-summarized or user-defined scope" },
+    "status": { "type": "string", "description": "intake | planning | active | review | delivery_staged | delivered_manually | revision_requested | completed | archived" },
+    "priority": { "type": "string", "description": "low | medium | high | critical" },
+    "progress_percent": { "type": "number", "description": "Calculated progress based on tasks" },
+    "contract_value": { "type": "number", "description": "Agreed payment amount" },
+    "currency": { "type": "string", "description": "USD, EUR, etc." },
+    "deadline": { "type": "string", "description": "ISO date for job completion" },
+    "started_at": { "type": "string", "description": "ISO date when work began" },
+    "completed_at": { "type": "string", "description": "ISO date when job was closed" },
+    "delivery_message_id": { "type": "string", "description": "Reference to the staged delivery message in Comms Deck" },
+    "linked_earning_id": { "type": "string", "description": "Reference to the Profit Console record" },
+    "metadata": { "type": "object", "description": "Additional platform-specific data" }
+  }
+}

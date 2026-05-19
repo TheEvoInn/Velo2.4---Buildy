@@ -1,0 +1,16 @@
+{
+  "name": "GalaxyLearningSignal",
+  "description": "User feedback and learning signals from discovered opportunities",
+  "properties": {
+    "opportunity_feed_id": { "type": "string", "description": "Reference to the opportunity" },
+    "department": { "type": "string", "description": "Department context" },
+    "signal_type": { "type": "string", "description": "positive, negative, ignore, route" },
+    "user_feedback": { "type": "string", "description": "Direct user comments" },
+    "outcome_label": { "type": "string", "description": "Success, Failure, Inaccurate, Helpful" },
+    "routed_to": { "type": "string", "description": "Where it was sent" },
+    "success_score": { "type": "number", "description": "0-1 score" },
+    "notes": { "type": "string", "description": "System notes on the signal" },
+    "captured_at": { "type": "string", "description": "ISO timestamp" },
+    "metadata": { "type": "object", "description": "Signal metadata" }
+  }
+}

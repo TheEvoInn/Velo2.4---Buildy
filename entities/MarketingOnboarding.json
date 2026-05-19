@@ -1,0 +1,15 @@
+{
+  "name": "MarketingOnboarding",
+  "description": "Onboarding details for marketing members",
+  "properties": {
+    "member_id": { "type": "string", "description": "ID of the associated MarketingMember" },
+    "nda_signed": { "type": "boolean", "description": "Whether the NDA was signed" },
+    "jan1_confirmed": { "type": "boolean", "description": "Whether the Jan 1 setup attendance is confirmed" },
+    "beta_opt_in": { "type": "boolean", "description": "Whether the user opted into the beta" },
+    "email_promotions": { "type": "boolean", "description": "Email preference for promotions" },
+    "email_updates": { "type": "boolean", "description": "Email preference for updates" },
+    "email_community": { "type": "boolean", "description": "Email preference for community" },
+    "optional_feedback": { "type": "string", "description": "Optional feedback from the member" },
+    "timestamp": { "type": "string", "description": "When onboarding was completed" }
+  }
+}

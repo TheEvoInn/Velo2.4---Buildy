@@ -1,0 +1,17 @@
+
+{
+  "name": "CloneVerificationAsset",
+  "description": "Encrypted asset metadata for verification documents",
+  "properties": {
+    "profile_id": { "type": "string", "description": "Associated AutopilotProfile ID" },
+    "asset_type": { "type": "string", "description": "Type: id_document, profile_photo, signature, certificate, portfolio" },
+    "label": { "type": "string", "description": "Display label" },
+    "file_url": { "type": "string", "description": "URL of the uploaded (optionally encrypted) file" },
+    "encrypted_payload": { "type": "string", "description": "AES-encrypted metadata JSON" },
+    "payload_summary": { "type": "string", "description": "Safe non-sensitive summary" },
+    "verification_purpose": { "type": "string", "description": "What this asset verifies" },
+    "expiry_date": { "type": "string", "description": "Asset expiration date" },
+    "status": { "type": "string", "description": "Verification status" },
+    "last_used_at": { "type": "string", "description": "Timestamp of last usage" }
+  }
+}

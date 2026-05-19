@@ -1,0 +1,47 @@
+
+{
+  "name": "VeloCommandMessage",
+  "description": "Persistent chat history for the VELO Command Officer. Stores interactions between the pilot and the system operator.",
+  "properties": {
+    "role": {
+      "type": "string",
+      "description": "The sender role: 'officer' or 'pilot'"
+    },
+    "content": {
+      "type": "string",
+      "description": "The message text content"
+    },
+    "intent": {
+      "type": "string",
+      "description": "The detected intent of the message (e.g., NAVIGATE, STATUS, STAGE_ACTION)"
+    },
+    "status": {
+      "type": "string",
+      "description": "Status of the message processing: 'processed', 'pending_clarification', 'staged'"
+    },
+    "access_level": {
+      "type": "string",
+      "description": "Access role at the time of message (public, regular, admin)"
+    },
+    "related_mission_id": {
+      "type": "string",
+      "description": "ID of a created mission if this message resulted in a staged action"
+    },
+    "related_log_id": {
+      "type": "string",
+      "description": "ID of the action log entry"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Flexible storage for command-specific data. MUST NOT store raw secrets, credentials, or payout details."
+    },
+    "owner_user_id": {
+      "type": "string",
+      "description": "The ID of the user who owns this message for isolation."
+    },
+    "owner_email": {
+      "type": "string",
+      "description": "The email of the user who owns this message for secondary isolation."
+    }
+  }
+}

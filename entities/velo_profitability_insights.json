@@ -1,0 +1,30 @@
+{
+  "name": "VeloProfitabilityInsight",
+  "description": "Calculated profitability and ROI analysis for specific income categories and lanes.",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "The ID of the user who owns this insight" },
+    "owner_email": { "type": "string", "description": "The email of the user who owns this insight" },
+    "category_key": { "type": "string", "description": "Normalized category key (e.g. ai_training, online_testing)" },
+    "category_label": { "type": "string", "description": "Human-friendly label for the category" },
+    "source_department": { "type": "string", "description": "Primary department associated with this category" },
+    "total_earned": { "type": "number", "description": "Total amount earned in this category" },
+    "net_profit": { "type": "number", "description": "Net profit (earnings minus losses/refunds)" },
+    "total_minutes": { "type": "number", "description": "Estimated total minutes spent on tasks in this category" },
+    "hourly_profit": { "type": "number", "description": "Calculated hourly profit (net_profit / (total_minutes / 60))" },
+    "roi_score": { "type": "number", "description": "Deterministic ROI score (0-100) based on profit, volume, and confidence" },
+    "completed_count": { "type": "number", "description": "Number of completed missions or tasks" },
+    "transaction_count": { "type": "number", "description": "Number of income transactions" },
+    "autopilot_transaction_count": { "type": "number", "description": "Number of income transactions involving Autopilot" },
+    "refund_or_loss_total": { "type": "number", "description": "Total value of refunds, chargebacks, or losses" },
+    "confidence": { "type": "string", "description": "Confidence level (low, medium, high)" },
+    "confidence_notes": { "type": "string", "description": "Reasoning for the confidence level" },
+    "trend": { "type": "string", "description": "Trend status (rising, steady, falling, insufficient_data)" },
+    "best_platforms": { "type": "array", "description": "List of top performing platforms in this category", "items": { "type": "string" } },
+    "representative_mission_ids": { "type": "array", "description": "Sample mission IDs used for calculation", "items": { "type": "string" } },
+    "representative_transaction_ids": { "type": "array", "description": "Sample transaction IDs used for calculation", "items": { "type": "string" } },
+    "recommendation": { "type": "string", "description": "Short user-facing recommendation based on data" },
+    "autopilot_priority": { "type": "string", "description": "Autopilot priority level (deprioritize, normal, prioritize, strongly_prioritize)" },
+    "calculated_at": { "type": "string", "description": "ISO timestamp of when this insight was last calculated" },
+    "metadata": { "type": "object", "description": "Additional unstructured analysis data" }
+  }
+}

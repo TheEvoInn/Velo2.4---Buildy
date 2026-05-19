@@ -1,0 +1,23 @@
+{
+  "name": "FreelanceEarning",
+  "description": "A financial ledger entry for freelance work income.",
+  "properties": {
+    "owner_email": { "type": "string", "description": "Email of the earner" },
+    "owner_user_id": { "type": "string", "description": "User ID of the earner" },
+    "opportunity_id": { "type": "string", "description": "Linked FreelanceOpportunity ID" },
+    "platform": { "type": "string", "description": "Platform where work was completed" },
+    "client_name": { "type": "string", "description": "Name of the client" },
+    "job_title": { "type": "string", "description": "Title of the job completed" },
+    "amount": { "type": "number", "description": "Amount earned" },
+    "currency": { "type": "string", "description": "Currency code" },
+    "status": { "type": "string", "description": "pending | earned | invoiced | paid | disputed | cancelled" },
+    "payout_method_label": { "type": "string", "description": "User-friendly label for the payout method" },
+    "linked_vault_item_id": { "type": "string", "description": "Reference to a Secure Vault item for payout details" },
+    "invoice_reference": { "type": "string", "description": "Platform or custom invoice number" },
+    "earned_at": { "type": "string", "description": "Date work was completed/earned" },
+    "expected_payout_at": { "type": "string", "description": "Estimated date for funds availability" },
+    "paid_at": { "type": "string", "description": "Date funds were received" },
+    "notes": { "type": "string", "description": "Internal notes on the payment" },
+    "metadata": { "type": "object", "description": "Additional platform data" }
+  }
+}

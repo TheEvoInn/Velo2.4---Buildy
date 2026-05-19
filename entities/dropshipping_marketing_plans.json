@@ -1,0 +1,20 @@
+{
+  "name": "DropshippingMarketingPlan",
+  "description": "A marketing and advertising plan for a product",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "The user ID who owns this plan" },
+    "owner_email": { "type": "string", "description": "The email of the user who owns this plan" },
+    "candidate_id": { "type": "string", "description": "The ID of the related product candidate" },
+    "offer_id": { "type": "string", "description": "The ID of the related offer blueprint" },
+    "plan_type": { "type": "string", "description": "organic, paid, or hybrid" },
+    "free_channels": { "type": "array", "items": { "type": "string" }, "description": "Free channels to be used" },
+    "organic_content_plan": { "type": "string", "description": "Plan for free organic content" },
+    "ad_copy_prompts": { "type": "string", "description": "AI prompts for generating ad copy" },
+    "creative_prompts": { "type": "string", "description": "AI prompts for generating ad visuals" },
+    "paid_channel_requirements": { "type": "string", "description": "Requirements for paid channels if enabled" },
+    "paid_ads_enabled": { "type": "boolean", "description": "Whether paid ads are currently allowed" },
+    "status": { "type": "string", "description": "draft, approved, or active" },
+    "audit_summary": { "type": "string", "description": "Audit trail for marketing actions" },
+    "metadata": { "type": "object", "description": "Additional structured metadata" }
+  }
+}

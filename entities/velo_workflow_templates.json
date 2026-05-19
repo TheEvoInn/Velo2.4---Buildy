@@ -1,0 +1,22 @@
+{
+  "name": "VeloWorkflowTemplate",
+  "description": "Reusable playbooks and learned workflows saved from successful autonomous actions",
+  "properties": {
+    "name": { "type": "string", "description": "Name of the template" },
+    "department": { "type": "string", "description": "Associated department" },
+    "workflow_type": { "type": "string", "description": "The type of action (e.g. proposal_drafting, task_decomposition)" },
+    "trigger_context": { "type": "string", "description": "When this template should be suggested" },
+    "region": { "type": "string", "description": "Target geographic region (e.g. Europe, Asia, Global)" },
+    "work_type": { "type": "string", "description": "Type of work (e.g. freelance, microtask, testing)" },
+    "safe_execution_mode": { "type": "string", "description": "staged_packet, local_browser_assist, manual_submit" },
+    "steps": { "type": "array", "description": "List of execution steps", "items": { "type": "object" } },
+    "required_inputs": { "type": "array", "description": "Inputs needed for execution", "items": { "type": "string" } },
+    "preferred_mode": { "type": "string", "description": "The preferred execution mode (paid, free, local)" },
+    "fallback_mode": { "type": "string", "description": "The fallback execution mode" },
+    "success_count": { "type": "number", "description": "Number of times this template was used successfully" },
+    "last_used_at": { "type": "string", "description": "Last usage timestamp" },
+    "status": { "type": "string", "description": "draft, active, archived" },
+    "notes": { "type": "string", "description": "Implementation notes" },
+    "metadata": { "type": "object", "description": "Additional configuration" }
+  }
+}

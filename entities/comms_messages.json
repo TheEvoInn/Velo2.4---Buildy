@@ -1,0 +1,16 @@
+
+
+{
+  "name": "CommsMessage",
+  "description": "Records of messages sent or drafted",
+  "properties": {
+    "recipient": { "type": "string", "description": "Recipient email address" },
+    "subject": { "type": "string", "description": "Message subject" },
+    "body_html": { "type": "string", "description": "Message body" },
+    "status": { "type": "string", "description": "draft | pending_review | approved_for_manual_send | manual_handled | sent | failed" },
+    "template_id": { "type": "string", "description": "Reference to the template used" },
+    "department": { "type": "string", "description": "Originating department" },
+    "sent_at": { "type": "string", "description": "Timestamp when sent" },
+    "failure_reason": { "type": "string", "description": "Error details if failed" }
+  }
+}

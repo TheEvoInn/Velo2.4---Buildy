@@ -1,0 +1,14 @@
+{
+  "name": "AutopilotPermission",
+  "description": "Explicit grants and boundaries for autonomous actions",
+  "properties": {
+    "scope": { "type": "string", "description": "Scope of the permission (e.g., CRYPTO_TRADE)" },
+    "department": { "type": "string", "description": "Department this applies to" },
+    "allowed_actions": { "type": "array", "description": "List of allowed action types", "items": { "type": "string" } },
+    "value_limit": { "type": "number", "description": "Max value allowed for this permission" },
+    "time_window": { "type": "string", "description": "Daily, Weekly, Monthly" },
+    "constraints": { "type": "string", "description": "Any constraints or limits" },
+    "expiry": { "type": "string", "description": "Optional expiry timestamp" },
+    "status": { "type": "string", "description": "active | revoked | pending" }
+  }
+}

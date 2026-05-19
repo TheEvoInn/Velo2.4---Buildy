@@ -1,0 +1,13 @@
+{
+  "name": "AutopilotActionLog",
+  "description": "Black Box Recorder for all pilot actions",
+  "properties": {
+    "department": { "type": "string", "description": "Department where the action occurred" },
+    "action_type": { "type": "string", "description": "Type of action taken" },
+    "status": { "type": "string", "description": "success | failure | pending | blocked" },
+    "summary": { "type": "string", "description": "Human-readable summary of the action" },
+    "details": { "type": "string", "description": "Technical or detailed notes" },
+    "permission_id": { "type": "string", "description": "ID of the permission grant used" },
+    "related_id": { "type": "string", "description": "ID of a related record (message, vault item, etc)" }
+  }
+}

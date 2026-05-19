@@ -1,0 +1,23 @@
+{
+  "name": "GoogleAccountPreparationPlan",
+  "description": "Signup and account preparation plans for third-party platforms.",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "ID of the user who owns this plan" },
+    "owner_email": { "type": "string", "description": "Email of the user who owns this plan" },
+    "google_session_id": { "type": "string", "description": "ID of the associated GoogleConnectSession" },
+    "platform_name": { "type": "string", "description": "Name of the platform (e.g. Upwork)" },
+    "platform_profile_id": { "type": "string", "description": "Optional ID of an existing VeloPlatformProfile" },
+    "platform_category": { "type": "string", "description": "Category of the platform" },
+    "account_status": { "type": "string", "description": "connected | likely_existing | missing | needs_review" },
+    "connection_method": { "type": "string", "description": "google_sign_in | oauth | manual_signup | unknown" },
+    "required_fields": { "type": "array", "items": { "type": "string" }, "description": "List of fields required by the platform" },
+    "suggested_values": { "type": "object", "description": "Map of field names to suggested values from Google/Profile" },
+    "prefill_payload": { "type": "object", "description": "Payload that can be used to prefill a signup form safely" },
+    "manual_steps": { "type": "array", "items": { "type": "string" }, "description": "Step-by-step manual signup instructions" },
+    "approval_status": { "type": "string", "description": "draft | pending_review | approved | rejected" },
+    "approved_at": { "type": "string", "description": "Timestamp of approval" },
+    "sync_status": { "type": "string", "description": "not_synced | synced_to_platform_profile | synced_to_vault_label | blocked" },
+    "audit_summary": { "type": "string", "description": "Summary of actions for the audit log" },
+    "metadata": { "type": "object", "description": "Additional plan metadata" }
+  }
+}

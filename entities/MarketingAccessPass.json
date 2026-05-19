@@ -1,0 +1,10 @@
+{
+  "name": "MarketingAccessPass",
+  "description": "Available access pass tiers",
+  "properties": {
+    "tier": { "type": "string", "description": "Name of the tier" },
+    "price": { "type": "number", "description": "Price in cents or dollars" },
+    "duration": { "type": "string", "description": "Duration (monthly, yearly, lifetime)" },
+    "expiration": { "type": "string", "description": "Expiration date if applicable" }
+  }
+}

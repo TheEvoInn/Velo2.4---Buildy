@@ -1,0 +1,19 @@
+{
+  "name": "VeloWalletPayout",
+  "description": "Records of fund withdrawals and payouts from platforms to the user.",
+  "properties": {
+    "owner_email": { "type": "string", "description": "Email of the wallet owner" },
+    "owner_user_id": { "type": "string", "description": "User ID of the wallet owner" },
+    "amount": { "type": "number", "description": "Payout amount" },
+    "currency": { "type": "string", "description": "Currency code" },
+    "platform": { "type": "string", "description": "Platform initiating the payout" },
+    "destination_label": { "type": "string", "description": "Safe label for destination (e.g., 'PayPal Personal', 'Chase Bank') - NO RAW ACCOUNT NUMBERS" },
+    "status": { "type": "string", "description": "upcoming | processing | completed | failed | cancelled" },
+    "payout_date": { "type": "string", "description": "Expected or actual payout date" },
+    "completed_at": { "type": "string", "description": "Timestamp of completion" },
+    "external_transaction_id": { "type": "string", "description": "Reference ID from the external platform" },
+    "notes": { "type": "string", "description": "User or system notes" },
+    "linked_transaction_ids": { "type": "array", "items": { "type": "string" }, "description": "IDs of VeloWalletTransactions included in this payout" },
+    "metadata": { "type": "object", "description": "Additional context" }
+  }
+}

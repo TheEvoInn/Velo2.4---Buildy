@@ -1,0 +1,20 @@
+{
+  "name": "GalaxyScannerSource",
+  "description": "Registry of data sources for the Galaxy Scanner framework",
+  "properties": {
+    "name": { "type": "string", "description": "Name of the source" },
+    "department": { "type": "string", "description": "Target department: freelance, crypto, trade, market" },
+    "source_type": { "type": "string", "description": "Type: api, scraper, manual, feed" },
+    "cost_mode": { "type": "string", "description": "free, paid, open-source" },
+    "access_mode": { "type": "string", "description": "automatic, connector-ready, manual" },
+    "status": { "type": "string", "description": "active, disabled, degraded, testing" },
+    "fallback_path": { "type": "string", "description": "Description of manual fallback if source fails" },
+    "confidence": { "type": "number", "description": "Reliability score from 0-1" },
+    "last_checked_at": { "type": "string", "description": "ISO timestamp of last check" },
+    "setup_notes": { "type": "string", "description": "Instructions for setting up this source" },
+    "allowed_actions": { "type": "array", "items": { "type": "string" }, "description": "Permitted activities" },
+    "forbidden_actions": { "type": "array", "items": { "type": "string" }, "description": "Restricted activities" },
+    "connector_profile_id": { "type": "string", "description": "Reference to a VeloConnectorProfile" },
+    "metadata": { "type": "object", "description": "Source-specific config" }
+  }
+}

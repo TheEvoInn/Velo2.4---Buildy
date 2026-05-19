@@ -1,0 +1,12 @@
+{
+  "name": "CommsTemplate",
+  "description": "Message templates for outbound communication",
+  "properties": {
+    "name": { "type": "string", "description": "Template name" },
+    "subject": { "type": "string", "description": "Email subject line" },
+    "body_html": { "type": "string", "description": "Email body in HTML" },
+    "department": { "type": "string", "description": "Department this template belongs to" },
+    "template_type": { "type": "string", "description": "outreach | application | confirmation | status" },
+    "tone": { "type": "string", "description": "Tone of the template" }
+  }
+}

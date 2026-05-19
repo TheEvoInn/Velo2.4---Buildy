@@ -1,0 +1,25 @@
+{
+  "name": "VeloConnectorProfile",
+  "description": "Profiles for system connectors and user-defined approval boundaries",
+  "properties": {
+    "name": { "type": "string", "description": "Name of the connector" },
+    "category": { "type": "string", "description": "local_tool, payment_processor, ecommerce_platform, freelance_platform, manual" },
+    "provider_type": { "type": "string", "description": "e.g., Shopify, Upwork, Stripe, PayPal, Custom" },
+    "owner_email": { "type": "string", "description": "Email of the owner for user-specific scoping" },
+    "owner_user_id": { "type": "string", "description": "User ID of the owner for robust scoping" },
+    "cost_mode": { "type": "string", "description": "free_opensource, free_public, paid_optional, proprietary_optional, manual" },
+    "connection_mode": { "type": "string", "description": "readonly, staged_only, approval_required_execution, disabled, connector_ready" },
+    "status": { "type": "string", "description": "connected, connector_ready, disabled, manual_fallback" },
+    "allowed_actions": { "type": "array", "description": "Permitted actions", "items": { "type": "string" } },
+    "forbidden_actions": { "type": "array", "description": "Blocked actions", "items": { "type": "string" } },
+    "max_risk_level": { "type": "string", "description": "low | medium | high" },
+    "max_value_per_action": { "type": "number", "description": "Maximum USD value per intent" },
+    "daily_action_limit": { "type": "number", "description": "Max actions per day" },
+    "approval_style": { "type": "string", "description": "always_approve, above_threshold, two_step, manual_only" },
+    "credential_reference": { "type": "string", "description": "Label of item in Secure Core" },
+    "fallback_connector_id": { "type": "string", "description": "ID of connector to use if this fails" },
+    "setup_notes": { "type": "string", "description": "User notes or instructions" },
+    "last_checked_at": { "type": "string", "description": "Last status check" },
+    "metadata": { "type": "object", "description": "Additional settings" }
+  }
+}

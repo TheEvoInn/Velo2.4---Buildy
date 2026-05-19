@@ -1,0 +1,20 @@
+{
+  "name": "DropshippingFulfillmentPlan",
+  "description": "A plan for handling product fulfillment and orders",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "The user ID who owns this plan" },
+    "owner_email": { "type": "string", "description": "The email of the user who owns this plan" },
+    "candidate_id": { "type": "string", "description": "The ID of the related product candidate" },
+    "product_type": { "type": "string", "description": "physical or digital" },
+    "supplier_connector_label": { "type": "string", "description": "The supplier connector to use" },
+    "fulfillment_mode": { "type": "string", "description": "manual, semi-auto, or full-auto" },
+    "automation_allowed": { "type": "boolean", "description": "Whether automation is explicitly enabled" },
+    "order_system_reference": { "type": "string", "description": "Reference to the internal order system" },
+    "digital_delivery_asset_ref": { "type": "string", "description": "Reference to the digital asset" },
+    "supplier_order_status": { "type": "string", "description": "pending, ordered, or fulfilled" },
+    "delivery_notes": { "type": "string", "description": "Notes for delivery and tracking" },
+    "approval_required": { "type": "boolean", "description": "Whether manual approval is needed per order" },
+    "status": { "type": "string", "description": "draft, active, or completed" },
+    "metadata": { "type": "object", "description": "Additional structured metadata" }
+  }
+}

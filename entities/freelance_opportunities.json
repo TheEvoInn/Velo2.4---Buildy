@@ -1,0 +1,29 @@
+{
+  "name": "FreelanceOpportunity",
+  "description": "A discovered or manually entered freelance job opportunity.",
+  "properties": {
+    "platform": { "type": "string", "description": "Platform name (e.g., Upwork, Freelancer, Fiverr)" },
+    "source_url": { "type": "string", "description": "Direct URL to the job posting" },
+    "title": { "type": "string", "description": "Job title" },
+    "client_name": { "type": "string", "description": "Name or identifier of the client" },
+    "summary": { "type": "string", "description": "Brief description of the work" },
+    "requirements": { "type": "string", "description": "Key skills or qualifications needed" },
+    "pay_type": { "type": "string", "description": "Fixed or Hourly" },
+    "pay_min": { "type": "number", "description": "Minimum pay value" },
+    "pay_max": { "type": "number", "description": "Maximum pay value" },
+    "currency": { "type": "string", "description": "Currency code (e.g., USD)" },
+    "payout_text": { "type": "string", "description": "Human-readable payout description (e.g. '$500 - $1000' or 'Negotiable')" },
+    "estimated_time": { "type": "string", "description": "Estimated time to complete (e.g. '2 hours', '3 days')" },
+    "skill_level": { "type": "string", "description": "Required expertise level (e.g. entry, intermediate, expert)" },
+    "autopilot_compatibility": { "type": "string", "description": "How well Autopilot can handle this (high, medium, low)" },
+    "deadline": { "type": "string", "description": "Application or project deadline" },
+    "platform_rules": { "type": "string", "description": "Specific rules or constraints for this platform" },
+    "skill_match_score": { "type": "number", "description": "Calculated score 0-100 based on Clone Bay identity" },
+    "identity_fit_notes": { "type": "string", "description": "Notes on why this job fits or doesn't fit the user" },
+    "status": { "type": "string", "description": "discovered | reviewing | mission_queued | approved_to_apply | applied | won | rejected | archived" },
+    "risk_level": { "type": "string", "description": "low | medium | high" },
+    "linked_mission_id": { "type": "string", "description": "ID of the associated Action Engine mission" },
+    "linked_application_id": { "type": "string", "description": "ID of the associated application record" },
+    "metadata": { "type": "object", "description": "Additional platform-specific data" }
+  }
+}

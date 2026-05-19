@@ -1,0 +1,15 @@
+{
+  "name": "TradeProfitRecord",
+  "description": "Financial records for the e-commerce department",
+  "properties": {
+    "reference_id": { "type": "string" },
+    "revenue": { "type": "number" },
+    "expense_category": { "type": "string" },
+    "expense_amount": { "type": "number" },
+    "net_profit": { "type": "number" },
+    "payout_label": { "type": "string" },
+    "vault_reference": { "type": "string" },
+    "recorded_date": { "type": "string" },
+    "metadata": { "type": "object" }
+  }
+}

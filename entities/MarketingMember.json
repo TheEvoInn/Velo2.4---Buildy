@@ -1,0 +1,12 @@
+{
+  "name": "MarketingMember",
+  "description": "A member who has purchased a marketing access pass",
+  "properties": {
+    "name": { "type": "string", "description": "Full name of the member" },
+    "email": { "type": "string", "description": "Email address" },
+    "tier": { "type": "string", "description": "Membership tier (explorer, commander, founder)" },
+    "purchase_date": { "type": "string", "description": "Date of purchase (ISO string)" },
+    "revenue": { "type": "number", "description": "Revenue generated from the purchase" },
+    "onboarding_complete": { "type": "boolean", "description": "Whether the member has completed onboarding" }
+  }
+}

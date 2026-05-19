@@ -1,2 +1,1 @@
-# Velo2.4---Buildy
-Buildy ai build 2.4
+# Welcome to your Buildy project

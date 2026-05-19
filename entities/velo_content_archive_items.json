@@ -1,0 +1,29 @@
+{
+  "name": "VeloContentArchiveItem",
+  "description": "Permanent archive of all user-generated VELO outputs.",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "ID of the user who owns this content." },
+    "owner_email": { "type": "string", "description": "Email of the user who owns this content." },
+    "title": { "type": "string", "description": "Title or headline of the content." },
+    "content_type": { "type": "string", "description": "Type: job_application, email, social_post, product_description, sales_copy, report, plan, template, digital_product, research_summary, graphic, workflow_output, autopilot_deliverable, file, other." },
+    "source_department": { "type": "string", "description": "Source department like Freelance Station, Trading Hub, etc." },
+    "source_module": { "type": "string", "description": "Specific module ID that generated the content." },
+    "workflow_name": { "type": "string", "description": "Name of the workflow that produced this content." },
+    "body": { "type": "string", "description": "Full content body." },
+    "summary": { "type": "string", "description": "A short summary of the content." },
+    "file_url": { "type": "string", "description": "URL to a generated file, if applicable." },
+    "file_name": { "type": "string", "description": "Name of the generated file." },
+    "mime_type": { "type": "string", "description": "MIME type of the generated file." },
+    "related_mission_id": { "type": "string", "description": "ID of the mission that generated this content." },
+    "related_record_id": { "type": "string", "description": "ID of a related record (e.g. Job ID)." },
+    "related_record_type": { "type": "string", "description": "Type of the related record." },
+    "quality_score": { "type": "number", "description": "Assessed quality score 0-100." },
+    "status": { "type": "string", "description": "Status: archived, draft, final, reused." },
+    "visibility": { "type": "string", "description": "Visibility: user, admin." },
+    "tags": { "type": "array", "description": "Searchable tags for this content.", "items": { "type": "string" } },
+    "reuse_count": { "type": "number", "description": "Number of times this content has been reused." },
+    "last_reused_at": { "type": "string", "description": "Timestamp of last reuse." },
+    "created_at_label": { "type": "string", "description": "Human-readable creation date." },
+    "metadata": { "type": "object", "description": "Additional unstructured metadata." }
+  }
+}

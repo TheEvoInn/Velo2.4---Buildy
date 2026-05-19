@@ -1,0 +1,15 @@
+
+{
+  "name": "CloneProfileSection",
+  "description": "Encrypted sensitive sections of the digital clone profile",
+  "properties": {
+    "profile_id": { "type": "string", "description": "Associated AutopilotProfile ID" },
+    "section_type": { "type": "string", "description": "Type: legal_identity, address_contact, payout_financial, tax_information, work_preferences, legal_permissions, automation_rules" },
+    "label": { "type": "string", "description": "Display label" },
+    "encrypted_payload": { "type": "string", "description": "AES-encrypted JSON payload" },
+    "payload_summary": { "type": "string", "description": "Safe non-sensitive summary" },
+    "encryption_hint": { "type": "string", "description": "Public hint for the encryption key" },
+    "status": { "type": "string", "description": "Section status" },
+    "last_reviewed_at": { "type": "string", "description": "Timestamp of last review" }
+  }
+}

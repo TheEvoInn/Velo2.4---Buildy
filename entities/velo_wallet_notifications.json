@@ -1,0 +1,18 @@
+{
+  "name": "VeloWalletNotification",
+  "description": "User alerts specifically for wallet and income events.",
+  "properties": {
+    "owner_email": { "type": "string" },
+    "owner_user_id": { "type": "string" },
+    "notification_type": { "type": "string", "description": "new_earning | payout_initiated | payout_completed | sale_made | balance_changed | refund | chargeback" },
+    "title": { "type": "string" },
+    "message": { "type": "string" },
+    "severity": { "type": "string", "description": "info | success | warning | critical" },
+    "status": { "type": "string", "description": "unread | read | archived" },
+    "related_transaction_id": { "type": "string" },
+    "related_payout_id": { "type": "string" },
+    "related_platform": { "type": "string" },
+    "created_at": { "type": "string" },
+    "metadata": { "type": "object" }
+  }
+}

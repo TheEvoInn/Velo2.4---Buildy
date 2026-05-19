@@ -1,0 +1,21 @@
+{
+  "name": "FreelanceTask",
+  "description": "A specific step or milestone within a Freelance Job",
+  "properties": {
+    "job_id": { "type": "string", "description": "Reference to the parent FreelanceJob" },
+    "title": { "type": "string", "description": "Name of the task" },
+    "description": { "type": "string", "description": "Details of what needs to be done" },
+    "task_type": { "type": "string", "description": "research | writing | design | code | admin | review | delivery | other" },
+    "status": { "type": "string", "description": "queued | in_progress | blocked | ready_for_review | approved | revised | completed | skipped" },
+    "sequence_order": { "type": "number", "description": "Order of execution" },
+    "estimated_minutes": { "type": "number", "description": "Time estimate" },
+    "actual_minutes": { "type": "number", "description": "Time tracked" },
+    "started_at": { "type": "string", "description": "ISO date when task started" },
+    "completed_at": { "type": "string", "description": "ISO date when task finished" },
+    "assigned_mode": { "type": "string", "description": "manual | ai_assisted | connector_ready | not_configured" },
+    "output_summary": { "type": "string", "description": "Summary of the work produced" },
+    "risk_level": { "type": "string", "description": "low | medium | high" },
+    "review_notes": { "type": "string", "description": "Feedback or internal notes" },
+    "metadata": { "type": "object", "description": "Additional task data" }
+  }
+}

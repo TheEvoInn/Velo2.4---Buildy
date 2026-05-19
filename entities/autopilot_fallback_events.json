@@ -1,0 +1,19 @@
+{
+  "name": "AutopilotFallbackEvent",
+  "description": "Records of fallback and degraded-mode events when primary models or services are unavailable",
+  "properties": {
+    "department": { "type": "string", "description": "The VELO department where the event occurred" },
+    "workflow_name": { "type": "string", "description": "The name of the workflow or task" },
+    "primary_provider": { "type": "string", "description": "The provider that failed (e.g. OpenAI GPT-4)" },
+    "fallback_provider": { "type": "string", "description": "The provider used as fallback (e.g. Local Llama 3, Manual)" },
+    "trigger_reason": { "type": "string", "description": "Why the fallback was triggered (credit_exhausted, api_unavailable, etc.)" },
+    "severity": { "type": "string", "description": "low, medium, high" },
+    "status": { "type": "string", "description": "occurred, resolved" },
+    "details": { "type": "string", "description": "Detailed error or context information" },
+    "related_mission_id": { "type": "string", "description": "ID of the mission being executed" },
+    "related_record_id": { "type": "string", "description": "ID of the specific record being processed (e.g. application_id)" },
+    "occurred_at": { "type": "string", "description": "Timestamp of occurrence" },
+    "resolved_at": { "type": "string", "description": "Timestamp of resolution" },
+    "metadata": { "type": "object", "description": "Additional context" }
+  }
+}

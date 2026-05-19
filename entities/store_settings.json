@@ -1,0 +1,27 @@
+{
+  "name": "StoreSetting",
+  "description": "Per-user customization settings for their POD storefront",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "The user ID who owns this store" },
+    "owner_email": { "type": "string", "description": "The email of the user who owns this store" },
+    "store_name": { "type": "string", "description": "The public name of the store" },
+    "tagline": { "type": "string", "description": "A short marketing tagline for the store" },
+    "primary_color": { "type": "string", "description": "The primary theme color (hex)" },
+    "accent_color": { "type": "string", "description": "The accent theme color (hex)" },
+    "secondary_color": { "type": "string", "description": "The secondary/background theme color (hex)" },
+    "logo_url": { "type": "string", "description": "Optional URL for the store logo" },
+    "layout_style": { "type": "string", "description": "Product display layout (grid or list)" },
+    "card_style": { "type": "string", "description": "Design style of the product cards" },
+    "grid_columns": { "type": "number", "description": "Number of columns in grid layout" },
+    "show_product_type_badge": { "type": "boolean", "description": "Whether to show the product type badge" },
+    "show_prices": { "type": "boolean", "description": "Whether to show product prices" },
+    "hero_banner_url": { "type": "string", "description": "Background image URL for the store hero section" },
+    "hero_headline": { "type": "string", "description": "Large headline for the hero section" },
+    "hero_subtext": { "type": "string", "description": "Subtext for the hero section" },
+    "about_text": { "type": "string", "description": "About the store description text" },
+    "footer_text": { "type": "string", "description": "Custom footer message text" }
+  },
+  "capabilities": {
+    "ownership": "user"
+  }
+}

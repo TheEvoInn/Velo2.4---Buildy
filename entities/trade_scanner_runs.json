@@ -1,0 +1,17 @@
+{
+  "name": "TradeScannerRun",
+  "description": "Logs for e-commerce market scanning and niche research runs",
+  "properties": {
+    "scanner_name": { "type": "string" },
+    "source_targets": { "type": "array", "items": { "type": "string" } },
+    "search_query": { "type": "string" },
+    "status": { "type": "string", "description": "pending, running, completed, failed" },
+    "results_count": { "type": "number" },
+    "summary": { "type": "string" },
+    "fallback_used": { "type": "boolean" },
+    "started_at": { "type": "string" },
+    "completed_at": { "type": "string" },
+    "failure_reason": { "type": "string" },
+    "metadata": { "type": "object" }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "VeloBridgeJob",
+  "description": "A job packet staged for local pickup by a bridge runner",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "ID of the user who owns the job" },
+    "owner_email": { "type": "string", "description": "Email of the user who owns the job" },
+    "device_id": { "type": "string", "description": "ID of the target bridge device" },
+    "mission_id": { "type": "string", "description": "ID of the associated mission" },
+    "request_id": { "type": "string", "description": "ID of the associated real-world action request" },
+    "title": { "type": "string", "description": "A short title describing the job" },
+    "action_category": { "type": "string", "description": "Category of action (e.g. browser_automation, trading)" },
+    "risk_level": { "type": "string", "description": "Risk level of the action" },
+    "status": { 
+      "type": "string", 
+      "description": "Current status of the job packet",
+      "enum": ["staged", "awaiting_approval", "ready_for_pull", "pulled", "local_confirm_required", "running_local", "paused_friction", "completed", "failed", "denied", "revoked", "emergency_blocked"]
+    },
+    "packet_id": { "type": "string", "description": "Unique identifier for this job packet" },
+    "packet_nonce": { "type": "string", "description": "A random nonce for the packet to prevent replay attacks" },
+    "packet_issued_at": { "type": "string", "description": "ISO timestamp when the packet was created" },
+    "packet_expires_at": { "type": "string", "description": "ISO timestamp when the packet expires" },
+    "packet_hash": { "type": "string", "description": "SHA-256 hash of the canonical job packet data" },
+    "packet_signature": { "type": "string", "description": "Cryptographic signature from Buildy cloud" },
+    "runner_signature": { "type": "string", "description": "Cryptographic signature from the local runner on the result" },
+    "packet_summary": { "type": "string", "description": "A safe, high-level summary of the packet contents" },
+    "packet_signature_status": { 
+      "type": "string", 
+      "description": "Status of the job signature",
+      "enum": ["not_signed", "signed", "verified"]
+    },
+    "approval_prompt": { "type": "string", "description": "The specific message shown to the user for local approval" },
+    "approval_status": { 
+      "type": "string", 
+      "description": "Result of local manual approval",
+      "enum": ["not_required", "pending_local", "approved_local", "denied_local"]
+    },
+    "execution_adapter": { "type": "string", "description": "The local adapter that will handle the execution (e.g. browser_v1, trade_v1)" },
+    "execution_mode": { 
+      "type": "string", 
+      "description": "How the local runner should execute this job",
+      "enum": ["dry_run_only", "local_prompt_required", "blocked"]
+    },
+    "local_confirmation_required": { "type": "boolean", "description": "Whether local manual confirmation is required on the device" },
+    "result_summary": { "type": "string", "description": "A summary of the execution result" },
+    "failure_reason": { "type": "string", "description": "Reason for failure if applicable" },
+    "last_pulled_at": { "type": "string", "description": "ISO timestamp of when the job was last pulled" },
+    "completed_at": { "type": "string", "description": "ISO timestamp of completion" },
+    "metadata": { "type": "object", "description": "Additional job metadata" }
+  }
+}

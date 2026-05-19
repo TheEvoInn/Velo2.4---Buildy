@@ -1,0 +1,30 @@
+{
+  "name": "IdentityVerificationRequest",
+  "description": "Staged identity verification requirements triggered during platform onboarding.",
+  "properties": {
+    "platform_profile_id": { "type": "string", "description": "The linked platform profile ID" },
+    "platform_application_id": { "type": "string", "description": "The linked platform application ID" },
+    "platform_name": { "type": "string", "description": "The name of the platform" },
+    "requirement_label": { "type": "string", "description": "Human-readable label of the requirement" },
+    "verification_type": { 
+      "type": "string", 
+      "description": "Category of verification",
+      "enum": ["id_document", "selfie_or_profile_photo", "address", "tax", "business", "portfolio", "payout", "two_factor", "manual_review"]
+    },
+    "status": {
+      "type": "string",
+      "description": "Internal tracking status",
+      "enum": ["detected", "asset_needed", "asset_ready", "approval_requested", "approved_for_manual_use", "used_manually", "failed", "expired", "archived"]
+    },
+    "sensitivity": { "type": "string", "enum": ["medium", "high"] },
+    "safe_summary": { "type": "string", "description": "Non-sensitive explanation of why this is needed" },
+    "required_asset_label": { "type": "string", "description": "Label of the asset needed from Clone Bay" },
+    "linked_verification_asset_id": { "type": "string", "description": "ID of the linked CloneVerificationAsset" },
+    "linked_vault_item_id": { "type": "string", "description": "ID of the linked SecureVaultItem" },
+    "approval_mission_id": { "type": "string", "description": "ID of the generated approval mission" },
+    "expiry_date": { "type": "string", "description": "ISO date for request expiration" },
+    "failure_reason": { "type": "string" },
+    "last_checked_at": { "type": "string" },
+    "metadata": { "type": "object", "description": "Additional safe tracking data" }
+  }
+}

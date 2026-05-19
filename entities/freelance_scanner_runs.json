@@ -1,0 +1,17 @@
+{
+  "name": "FreelanceScannerRun",
+  "description": "A record of a discovery session by the Scanner Array.",
+  "properties": {
+    "scanner_name": { "type": "string", "description": "Friendly name for the scanner configuration" },
+    "platform_targets": { "type": "array", "items": { "type": "string" }, "description": "Platforms targeted in this run" },
+    "search_query": { "type": "string", "description": "The search keywords used" },
+    "filters": { "type": "object", "description": "Active filters (skills, pay, etc.)" },
+    "status": { "type": "string", "description": "configured | queued | running | completed | failed | cancelled" },
+    "results_count": { "type": "number", "description": "Number of opportunities discovered" },
+    "summary": { "type": "string", "description": "Brief summary of results or errors" },
+    "started_at": { "type": "string", "description": "ISO timestamp of run start" },
+    "completed_at": { "type": "string", "description": "ISO timestamp of run completion" },
+    "failure_reason": { "type": "string", "description": "Error details if failed" },
+    "metadata": { "type": "object", "description": "Additional configuration data" }
+  }
+}

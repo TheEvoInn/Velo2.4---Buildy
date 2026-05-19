@@ -1,0 +1,24 @@
+
+{
+  "name": "VeloContentAsset",
+  "description": "Marketplace-ready content assets for platform submissions.",
+  "properties": {
+    "platform_application_id": { "type": "string", "description": "ID of the linked platform application." },
+    "platform_profile_id": { "type": "string", "description": "ID of the linked platform profile." },
+    "platform_name": { "type": "string", "description": "Name of the target platform." },
+    "target_department": { "type": "string", "description": "Target department like freelance, crypto, trade." },
+    "asset_type": { "type": "string", "description": "Type: profile_headline, professional_bio, service_listing, portfolio_blurb, proposal_template, intro_message, faq_answer, package_description" },
+    "title": { "type": "string", "description": "Title or headline for the asset." },
+    "body": { "type": "string", "description": "Full content body of the asset." },
+    "tone": { "type": "string", "description": "The tone used in the content." },
+    "status": { "type": "string", "description": "Status: draft, ready, selected, archived, needs_revision" },
+    "quality_score": { "type": "number", "description": "Assessed quality score 0-100." },
+    "strengths": { "type": "array", "description": "Key strengths of this content piece.", "items": { "type": "string" } },
+    "improvement_notes": { "type": "string", "description": "Suggested improvements for this asset." },
+    "file_url": { "type": "string", "description": "URL to a generated file or image for this asset." },
+    "source_context_summary": { "type": "string", "description": "Safe summary of source context used for generation." },
+    "selected_for_submission": { "type": "boolean", "description": "Whether this asset is selected for manual submission." },
+    "last_used_at": { "type": "string", "description": "Last time this asset was copied or used." },
+    "metadata": { "type": "object", "description": "Additional asset-specific metadata." }
+  }
+}

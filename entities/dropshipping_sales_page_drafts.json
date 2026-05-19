@@ -1,0 +1,25 @@
+{
+  "name": "DropshippingSalesPageDraft",
+  "description": "A draft sales page for a product offer",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "The user ID who owns this draft" },
+    "owner_email": { "type": "string", "description": "The email of the user who owns this draft" },
+    "candidate_id": { "type": "string", "description": "The ID of the related product candidate" },
+    "offer_id": { "type": "string", "description": "The ID of the related offer blueprint" },
+    "page_type": { "type": "string", "description": "physical or digital" },
+    "title": { "type": "string", "description": "The title of the sales page" },
+    "slug_suggestion": { "type": "string", "description": "Suggested URL slug" },
+    "hero_copy": { "type": "string", "description": "Copy for the hero section" },
+    "product_story": { "type": "string", "description": "Narrative about the product" },
+    "benefits": { "type": "string", "description": "List of product benefits" },
+    "offer_stack": { "type": "string", "description": "Details of the full offer stack" },
+    "faq": { "type": "string", "description": "Frequently asked questions" },
+    "checkout_connector_label": { "type": "string", "description": "The payment connector to use" },
+    "payment_status": { "type": "string", "description": "unlinked, staged, or linked" },
+    "publish_status": { "type": "string", "description": "draft, staged, or live" },
+    "page_builder_status": { "type": "string", "description": "pending, created, or failed" },
+    "preview_summary": { "type": "string", "description": "A summary for the page preview" },
+    "status": { "type": "string", "description": "active, archived, or draft" },
+    "metadata": { "type": "object", "description": "Additional structured metadata" }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "VeloMemberInvitation",
+  "description": "Member invitations for onboarding new users to the platform",
+  "properties": {
+    "email": { "type": "string", "description": "Email address of the invited member" },
+    "role": { "type": "string", "description": "Requested role (admin, member, observer)" },
+    "status": { "type": "string", "description": "Invitation status (sent, pending, accepted, expired, revoked)" },
+    "token_hint": { "type": "string", "description": "A safe reference code for the invitation link" },
+    "invited_by_email": { "type": "string", "description": "Email of the admin who sent the invite" },
+    "sent_at": { "type": "string", "description": "Timestamp when the invite was sent" },
+    "expires_at": { "type": "string", "description": "Timestamp when the invite expires" },
+    "accepted_at": { "type": "string", "description": "Timestamp when the invite was accepted" },
+    "revoked_at": { "type": "string", "description": "Timestamp when the invite was revoked" },
+    "resend_count": { "type": "number", "description": "Number of times the invite has been resent" },
+    "workspace_status": { "type": "string", "description": "Status of the user's workspace creation (pending, created)" },
+    "onboarding_route": { "type": "string", "description": "Target onboarding starting point" },
+    "notes": { "type": "string", "description": "Internal notes for this invitation" },
+    "metadata": { "type": "object", "description": "Additional invitation metadata" }
+  }
+}

@@ -1,0 +1,20 @@
+
+{
+  "name": "TradeProductListing",
+  "description": "Drafts and active product listings for the e-commerce department",
+  "properties": {
+    "opportunity_id": { "type": "string" },
+    "title": { "type": "string" },
+    "description": { "type": "string" },
+    "seo_text": { "type": "string" },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "price": { "type": "number" },
+    "inventory_mode": { "type": "string" },
+    "fulfillment_notes": { "type": "string" },
+    "platform_target": { "type": "string" },
+    "connector_reference": { "type": "string" },
+    "status": { "type": "string", "description": "draft, staged, approved_staged, active, archived" },
+    "linked_mission_id": { "type": "string" },
+    "metadata": { "type": "object" }
+  }
+}

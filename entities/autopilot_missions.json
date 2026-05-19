@@ -1,0 +1,21 @@
+
+{
+  "name": "AutopilotMission",
+  "description": "A task or action queued by a department for Autopilot approval and execution",
+  "properties": {
+    "title": { "type": "string", "description": "Short title of the mission" },
+    "source_department": { "type": "string", "description": "The department that requested the mission (e.g., Freelance Station, Crypto Observatory)" },
+    "mission_type": { "type": "string", "description": "The type of action (e.g., JOB_APPLICATION, TRADE_EXECUTION, OUTREACH)" },
+    "risk_level": { "type": "string", "description": "Risk assessment: low, medium, high" },
+    "details": { "type": "string", "description": "Full description of the mission" },
+    "requested_action": { "type": "string", "description": "The specific technical action to perform" },
+    "permission_id": { "type": "string", "description": "Optional reference to an active permission grant" },
+    "status": { "type": "string", "description": "pending, approved, denied, executed, failed, cancelled" },
+    "current_step_index": { "type": "number", "description": "The current active step index for sequential missions" },
+    "total_steps": { "type": "number", "description": "The total number of steps in the mission sequence" },
+    "next_action": { "type": "string", "description": "Short label describing the next expected action" },
+    "trigger_source_id": { "type": "string", "description": "Optional reference to the record that triggered this mission" },
+    "metadata": { "type": "object", "description": "Flexible storage for department-specific data" },
+    "resolved_at": { "type": "string", "description": "ISO timestamp of resolution" }
+  }
+}

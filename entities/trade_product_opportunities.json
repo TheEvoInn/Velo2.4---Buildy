@@ -1,0 +1,19 @@
+{
+  "name": "TradeProductOpportunity",
+  "description": "Identified profitable e-commerce product categories and niches",
+  "properties": {
+    "niche": { "type": "string" },
+    "product_idea": { "type": "string" },
+    "target_customer": { "type": "string" },
+    "demand_signals": { "type": "array", "items": { "type": "string" } },
+    "competition_notes": { "type": "string" },
+    "price_band": { "type": "string" },
+    "margin_notes": { "type": "string" },
+    "risk_level": { "type": "string" },
+    "confidence_score": { "type": "number" },
+    "status": { "type": "string", "description": "discovered, reviewing, accepted, rejected" },
+    "linked_mission_id": { "type": "string" },
+    "linked_listing_id": { "type": "string" },
+    "metadata": { "type": "object" }
+  }
+}

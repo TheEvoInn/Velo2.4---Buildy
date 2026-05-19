@@ -1,0 +1,110 @@
+{
+  "name": "VeloRealWorldActionRequest",
+  "description": "Durable governance for controlled real-world action requests in VELO",
+  "properties": {
+    "action_type": {
+      "type": "string",
+      "description": "Type of real-world action (e.g., publish_content, send_email, client_message, job_application, browser_automation, connector_activation, credential_use, data_export_prepare, workflow_run, money_movement, trading_action, form_submission, platform_onboarding)"
+    },
+    "department": {
+      "type": "string",
+      "description": "Department responsible for the action"
+    },
+    "title": {
+      "type": "string",
+      "description": "Short descriptive title of the action"
+    },
+    "requested_by_email": {
+      "type": "string",
+      "description": "Email of the requester"
+    },
+    "requested_by_user_id": {
+      "type": "string",
+      "description": "ID of the requester"
+    },
+    "explicit_user_request_summary": {
+      "type": "string",
+      "description": "Summary of the user's explicit request"
+    },
+    "autopilot_intent_confirmation": {
+      "type": "string",
+      "description": "Autopilot's confirmation of the intent"
+    },
+    "safety_validation_status": {
+      "type": "string",
+      "description": "Safety Core validation status (pending | passed | blocked | needs_review)"
+    },
+    "permission_status": {
+      "type": "string",
+      "description": "Admin permission status (pending | approved | denied | expired)"
+    },
+    "credential_scope_status": {
+      "type": "string",
+      "description": "Credential scope status (not_required | required_missing | scoped_ready | blocked)"
+    },
+    "connector_status": {
+      "type": "string",
+      "description": "Connector status (not_required | missing | read_only | write_ready | blocked)"
+    },
+    "execution_mode": {
+      "type": "string",
+      "description": "Governance execution mode (staged_review | admin_approved_ready | provider_ready | blocked | completed)"
+    },
+    "risk_level": {
+      "type": "string",
+      "description": "Risk assessment (low | medium | high | critical)"
+    },
+    "value_limit_summary": {
+      "type": "string",
+      "description": "Summary of value/financial limits for this action"
+    },
+    "required_approval_summary": {
+      "type": "string",
+      "description": "Summary of required approvals"
+    },
+    "black_box_log_id": {
+      "type": "string",
+      "description": "ID of the corresponding black box log entry"
+    },
+    "related_permission_id": {
+      "type": "string",
+      "description": "ID of related permission record"
+    },
+    "related_connector_id": {
+      "type": "string",
+      "description": "ID of related connector profile"
+    },
+    "related_vault_item_id": {
+      "type": "string",
+      "description": "ID of related vault item"
+    },
+    "related_mission_id": {
+      "type": "string",
+      "description": "ID of related mission"
+    },
+    "provider_notes": {
+      "type": "string",
+      "description": "Implementation/provider notes"
+    },
+    "blocked_reason": {
+      "type": "string",
+      "description": "Reason if action is blocked"
+    },
+    "approved_by_email": {
+      "type": "string",
+      "description": "Email of the approving admin"
+    },
+    "approved_at": {
+      "type": "string",
+      "description": "Timestamp of approval"
+    },
+    "completed_at": {
+      "type": "string",
+      "description": "Timestamp of completion"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional unstructured data"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "GoogleConnectSession",
+  "description": "Records of Google account connection sessions for prefilling data.",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "ID of the user who owns this session" },
+    "owner_email": { "type": "string", "description": "Email of the user who owns this session" },
+    "google_email": { "type": "string", "description": "Email from Google profile" },
+    "google_name": { "type": "string", "description": "Display name from Google profile" },
+    "google_picture_url": { "type": "string", "description": "Picture URL from Google profile" },
+    "status": { "type": "string", "description": "draft | connected_pending_review | approved | revoked | failed" },
+    "scopes": { "type": "array", "items": { "type": "string" }, "description": "Scopes granted during OAuth" },
+    "connected_at": { "type": "string", "description": "Timestamp of connection" },
+    "approved_at": { "type": "string", "description": "Timestamp of explicit user approval" },
+    "token_storage_status": { "type": "string", "description": "Metadata about where tokens are stored (e.g. pending, vault_label)" },
+    "consent_summary": { "type": "string", "description": "Summary of what the user consented to" },
+    "metadata": { "type": "object", "description": "Additional session metadata" }
+  }
+}

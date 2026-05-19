@@ -1,0 +1,24 @@
+{
+  "name": "VeloDeploymentRequest",
+  "description": "Staged deployment and rollback requests for system updates",
+  "properties": {
+    "title": { "type": "string", "description": "Short title of the deployment" },
+    "request_type": { "type": "string", "description": "Type (DEPLOY, ROLLBACK, PATCH)" },
+    "environment": { "type": "string", "description": "Target environment (staging, production)" },
+    "status": { "type": "string", "description": "Current status (requested, validated, approved, deployed, failed, rolled_back)" },
+    "summary": { "type": "string", "description": "Detailed summary of the release" },
+    "patch_notes": { "type": "string", "description": "User-facing change log" },
+    "validation_status": { "type": "string", "description": "Status of simulated pre-flight checks" },
+    "test_summary": { "type": "string", "description": "Summary of simulated test results" },
+    "rollback_plan": { "type": "string", "description": "Description of how to revert this change" },
+    "version_label": { "type": "string", "description": "Version identifier (e.g., v1.7.2)" },
+    "requested_by_email": { "type": "string", "description": "Email of the requester" },
+    "approved_by_email": { "type": "string", "description": "Email of the approver" },
+    "linked_command_id": { "type": "string", "description": "Reference to the original DevOps command" },
+    "staged_at": { "type": "string", "description": "Timestamp of staging" },
+    "approved_at": { "type": "string", "description": "Timestamp of approval" },
+    "deployed_at": { "type": "string", "description": "Timestamp of simulated deployment" },
+    "rolled_back_at": { "type": "string", "description": "Timestamp of simulated rollback" },
+    "metadata": { "type": "object", "description": "Technical metadata for the release" }
+  }
+}

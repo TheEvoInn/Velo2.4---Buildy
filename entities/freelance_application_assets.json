@@ -1,0 +1,15 @@
+{
+  "name": "FreelanceApplicationAsset",
+  "description": "Assets, documents, or portfolio items linked to a freelance application package.",
+  "properties": {
+    "application_id": { "type": "string", "description": "Reference to the FreelanceApplication" },
+    "asset_source": { "type": "string", "description": "Source of the asset (clone_verification_asset, secure_core_vault_item, uploaded_file_reference, portfolio_url, other)" },
+    "asset_ref_id": { "type": "string", "description": "ID or reference key from the source system" },
+    "label": { "type": "string", "description": "Display name or label for the asset" },
+    "asset_type": { "type": "string", "description": "Type of asset (document, image, link, text)" },
+    "usage_purpose": { "type": "string", "description": "Purpose of including this asset (e.g., verification, portfolio, case_study)" },
+    "permission_status": { "type": "string", "description": "Whether the autopilot has permission to share this asset (pending, granted, restricted)" },
+    "attached_at": { "type": "string", "description": "Timestamp when the asset was added to the package" },
+    "metadata": { "type": "object", "description": "Additional asset metadata" }
+  }
+}

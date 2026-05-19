@@ -1,0 +1,22 @@
+
+{
+  "name": "VeloPlatformApplication",
+  "description": "Tracks platform onboarding and application packets within the VELO ecosystem.",
+  "properties": {
+    "platform_profile_id": { "type": "string", "description": "The ID of the linked platform profile." },
+    "platform_name": { "type": "string", "description": "Display name of the platform." },
+    "target_department": { "type": "string", "description": "Target department like freelance, crypto, trade." },
+    "status": { "type": "string", "description": "Current status: draft, pending_review, approved, ready_for_manual_submission, submitted_manually, active, failed, blocked_missing_info, archived." },
+    "stage": { "type": "string", "description": "Internal onboarding stage: discovery, profiling, reviewing, staging, final." },
+    "generated_fields": { "type": "object", "description": "Safe pre-populated form fields from Clone Bay and Vault labels." },
+    "missing_fields": { "type": "array", "description": "Fields currently missing for completion.", "items": { "type": "string" } },
+    "review_notes": { "type": "string", "description": "User notes during review process." },
+    "approval_mission_id": { "type": "string", "description": "ID of the linked Autopilot mission for final approval." },
+    "risk_level": { "type": "string", "description": "Assessed risk level for this platform application." },
+    "submission_mode": { "type": "string", "description": "Mode of submission, usually manual or staged." },
+    "failure_reason": { "type": "string", "description": "Reason for application failure or block." },
+    "last_status_at": { "type": "string", "description": "Timestamp of the last status update." },
+    "submitted_at": { "type": "string", "description": "Timestamp when the manual submission was confirmed/recorded." },
+    "metadata": { "type": "object", "description": "Additional platform-specific metadata." }
+  }
+}

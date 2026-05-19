@@ -1,0 +1,16 @@
+{
+  "name": "PodDesign",
+  "description": "AI-generated designs for Print-on-Demand products",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "The user ID who owns this design" },
+    "owner_email": { "type": "string", "description": "The email of the user who owns this design" },
+    "title": { "type": "string", "description": "The title of the design" },
+    "niche": { "type": "string", "description": "The target niche for this design" },
+    "design_image_url": { "type": "string", "description": "URL of the generated design image" },
+    "design_prompt": { "type": "string", "description": "The AI prompt used to generate this design" },
+    "style_tags": { "type": "array", "items": { "type": "string" }, "description": "Tags describing the style" },
+    "status": { "type": "string", "description": "draft, approved, archived" },
+    "quality_score": { "type": "number", "description": "AI-rated quality score" },
+    "product_count": { "type": "number", "description": "Number of products created using this design" }
+  }
+}

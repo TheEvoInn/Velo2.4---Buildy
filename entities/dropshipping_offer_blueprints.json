@@ -1,0 +1,22 @@
+{
+  "name": "DropshippingOfferBlueprint",
+  "description": "A detailed offer strategy for a specific product candidate",
+  "properties": {
+    "owner_user_id": { "type": "string", "description": "The user ID who owns this blueprint" },
+    "owner_email": { "type": "string", "description": "The email of the user who owns this blueprint" },
+    "candidate_id": { "type": "string", "description": "The ID of the related product candidate" },
+    "offer_type": { "type": "string", "description": "standard, bundle, or upsell" },
+    "headline": { "type": "string", "description": "The main marketing headline" },
+    "positioning": { "type": "string", "description": "How the product is positioned in the market" },
+    "pricing_notes": { "type": "string", "description": "Pricing strategy details" },
+    "bonuses": { "type": "string", "description": "List of bonuses included" },
+    "guarantee_notes": { "type": "string", "description": "Guarantee and warranty details" },
+    "upsells": { "type": "string", "description": "Recommended upsell products" },
+    "proof_needed": { "type": "string", "description": "Social proof and evidence required" },
+    "target_audience": { "type": "string", "description": "Detailed target audience profile" },
+    "risk_notes": { "type": "string", "description": "Notes on implementation risks" },
+    "status": { "type": "string", "description": "draft, approved, or active" },
+    "quality_score": { "type": "number", "description": "AI quality score for this offer" },
+    "metadata": { "type": "object", "description": "Additional structured metadata" }
+  }
+}
